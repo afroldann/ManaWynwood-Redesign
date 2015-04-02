@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKE,gCAAmB,CAClB,UAAU,CAAE,4CAA4C,CAEzD,+BAAkB,CACjB,UAAU,CAAE,2CAA2C,CAExD,6BAAgB,CACf,UAAU,CAAE,yCAAyC,CAEtD,iCAAoB,CACnB,UAAU,CAAE,6CAA6C,CAE1D,+BAAkB,CACjB,UAAU,CAAE,2CAA2C,CAExD,gCAAmB,CAClB,UAAU,CAAE,4CAA4C",
+"sources": ["../sass/social.sass"],
+"names": [],
+"file": "social.css"
+}

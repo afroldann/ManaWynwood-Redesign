@@ -1,0 +1,114 @@
+// mixins
+
+//**************
+=transition($transition-property, $transition-time, $method) 
+  -webkit-transition: $transition-property $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+=opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity=$opacity-ie)
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+
+// font HelveticaNeueCondensedBlack
+//=================================
+
+$HELVBLCDBL: HELVBLCDBL
+
+$url_0: url(../fonts/HelveticaNeueCondensedBlack.eot)
+$url_1: url(../fonts/HelveticaNeueCondensedBlack.eot?#iefix)
+$url_2: url(../fonts/HelveticaNeueCondensedBlack.woff)
+$url_3: url(../fonts/HelveticaNeueCondensedBlack.ttf)
+$url_4: url(../fonts/HelveticaNeueCondensedBlack.svg#HelveticaNeueCondensedBlack)
+
+@font-face 
+  font-family: $HELVBLCDBL
+  src: $url_0
+  src: $url_1 format('embedded-opentype'), $url_2 format('woff'), $url_3 format('truetype'), $url_4 format('svg')
+  font-weight: normal
+  font-style: normal
+
+// font HelveticaNeueCondensedBlold
+//=================================
+
+$HELVBLCD: HELVBLCD
+
+$url_0: url(../fonts/HelveticaNeueCondensedBold.eot)
+$url_1: url(../fonts/HelveticaNeueCondensedBold.eot?#iefix)
+$url_2: url(../fonts/HelveticaNeueCondensedBold.woff)
+$url_3: url(../fonts/HelveticaNeueCondensedBold.ttf)
+$url_4: url(../fonts/HelveticaNeueCondensedBold.svg#HelveticaNeueCondensedBold)
+
+@font-face 
+  font-family: $HELVBLCD
+  src: $url_0
+  src: $url_1 format('embedded-opentype'), $url_2 format('woff'), $url_3 format('truetype'), $url_4 format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+// font HelveticaNeue
+//=================================
+
+$HELV: HELV
+
+$url_0: url(../fonts/HelveticaNeue.eot)
+$url_1: url(../fonts/HelveticaNeue.eot?#iefix)
+$url_2: url(../fonts/HelveticaNeue.woff)
+$url_3: url(../fonts/HelveticaNeue.ttf)
+$url_4: url(../fonts/HelveticaNeue.svg#HelveticaNeue)
+
+@font-face 
+  font-family: $HELV
+  src: $url_0
+  src: $url_1 format('embedded-opentype'), $url_2 format('woff'), $url_3 format('truetype'), $url_4 format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+// font HelveticaNeueLight
+//=================================
+
+$HELVLG: HELVLG
+
+$url_0: url(../fonts/HelveticaNeueLight.eot)
+$url_1: url(../fonts/HelveticaNeueLight.eot?#iefix)
+$url_2: url(../fonts/HelveticaNeueLight.woff)
+$url_3: url(../fonts/HelveticaNeueLight.ttf)
+$url_4: url(../fonts/HelveticaNeueLight.svg#HelveticaNeueLight)
+
+@font-face 
+  font-family: $HELVLG
+  src: $url_0
+  src: $url_1 format('embedded-opentype'), $url_2 format('woff'), $url_3 format('truetype'), $url_4 format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+// font HelveticaNeueThin
+//=================================
+
+$HELVLT: HELVLT
+
+$url_0: url(../fonts/HelveticaNeueThin.eot)
+$url_1: url(../fonts/HelveticaNeueThin.eot?#iefix)
+$url_2: url(../fonts/HelveticaNeueThin.woff)
+$url_3: url(../fonts/HelveticaNeueThin.ttf)
+$url_4: url(../fonts/HelveticaNeueThin.svg#HelveticaNeueThin)
+
+@font-face 
+  font-family: $HELVLT
+  src: $url_0
+  src: $url_1 format('embedded-opentype'), $url_2 format('woff'), $url_3 format('truetype'), $url_4 format('svg')
+  font-weight: normal
+  font-style: normal

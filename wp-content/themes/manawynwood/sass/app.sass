@@ -1,0 +1,535 @@
+// Custom style for MANAWYNWOOD Company
+//=====================================
+
+// Vars
+//=====================================
+
+@import 'vars'
+@import 'mixins'
+@import 'mixins'
+@import 'fonts'
+@import 'social'
+
+// Main styles
+//=====================================
+
+html
+	-webkit-font-smoothing: antialiased
+	font-smoothing: antialiased
+	body
+		-webkit-font-smoothing: antialiased
+		font-smoothing: antialiased
+		.row
+			position: relative
+		.columns 
+			padding: 0
+		
+		// header styles css
+		//==============================
+		.owl-nav	
+			width: 85px
+			float: right
+			.owl-prev, .owl-next
+				background: url(../images/sprite.svg) no-repeat
+				text-indent: -9999px
+				float: left
+				width: 30px
+				height: 30px
+			.owl-next
+				background-position: 0px -256px
+				margin-left: 10px
+			.owl-prev
+				background-position: 0px -141px
+		.title
+			h4 
+				font: 1.2em $HELVLT
+				padding-left: 35px
+				text-transform: uppercase
+				background: url( ../images/mw.svg ) no-repeat center left
+		.header
+			margin-top: 30px
+			margin-bottom: 20px
+			background: $mw-white
+			z-index: 9
+			.row
+				&.onScrolled
+					max-width: 75em
+					margin: 0
+			&.scrolled
+				position: fixed
+				margin: 0
+				+opacity(0.97)
+				.social-menu 
+					ul
+						padding: 0
+						li
+							padding: 25px 0
+							width: 10.66667%
+				.logo
+					padding: 30px 0px 0px 130px
+					background-size: 2.5em
+					color: $mw-white
+					height: 73px
+				.nav-bar 
+					margin-top: 25px
+			.nav-bar 
+				margin-top: 105px
+				.main-navigation
+					min-height: 0
+					.menu-main-nav-container
+						.nav-menu 
+							padding: 0
+							text-align: right
+							li
+								&.current_page_parent, &.current_page_item
+									a
+										font-style: normal
+										color: $mw-black
+
+								&:last-child
+									a
+										padding: 0
+								a
+									color: $mw-gray-regular
+									font-family: $HELVBLCD
+									font-size: 1.1em
+									padding: 0 15px
+									text-transform: uppercase
+
+									&[title="share"]
+										background: url(../images/sprite.svg) no-repeat center -2px
+										color: white
+										font-size: 0
+										padding: 17px
+										&.clicked
+											background: url(../images/sprite.svg) no-repeat center -50px $mw-white
+
+									&:hover, &:focus
+										outline: 0
+										color: $mw-black
+										background-color: $mw-white
+			.social-menu
+				display: none
+				ul 
+					margin: 0
+					padding: 10px 0
+					list-style: none
+					text-align: right
+					min-height: 72px
+					
+					li 	
+						margin: 0
+						padding: 30px 0
+						display: inline-block
+						width: 11.66667%
+						text-align: center
+						border: 1px solid $mw-gray-light
+						border-left: 0
+						float: right
+						position: relative
+						&:last-child
+							border-left: 1px solid $mw-gray-light
+
+						a
+							font-size: 0
+							position: absolute
+							left: 0
+							top: 0
+							width: 100%
+							height: 100%
+			&.open
+				margin-bottom: 0
+				display: block
+				.social-menu
+					display: block
+
+			.logo
+				background: url(../images/logo.svg) no-repeat center left
+				position: relative
+				padding: 100px 0px 0px 130px
+				display: block
+				height: 123px
+				font-size: 1.3em
+				color: black
+				font: 1.5em $HELVBLCD
+				&:hover 
+					text-decoration: none
+		
+		// header styles css
+		//==============================
+		.link-to-all
+			color: $mw-gray-soft
+			font: 1.2em $HELVBLCD
+			text-transform: uppercase
+			float: right
+			position: relative
+			top: -10px
+			+transition( all, 0.2s, ease-in-out )
+			z-index: 3
+			&:hover
+				text-decoration: none
+				color: $mw-red
+				&:after
+					padding-left: 25px
+			&:after
+				+transition( padding, 0.2s, ease-in-out )
+				content: "⟩"
+				font: bold 0.8em $HELVBLCDBL
+				padding-left: 15px
+				position: relative
+				top: -2px
+
+		.owl-controls
+			position: relative
+			width: 100%
+			display: block
+			height: 30px
+			.owl-dots
+				width: 120px
+				margin: 0 auto
+				height: 30px
+				text-align: center
+				.owl-dot
+					width: 9px
+					height: 9px
+					background: $mw-gray-light
+					+border-radius(100%)
+					display: inline-block
+					margin: 0 5px
+					+transition( background-color, 0.2s, ease-in-out )
+					&.active
+						background: $mw-red
+					&:hover
+						background: $mw-red
+						width: 10px
+						height: 10px
+
+		&.home
+			.slider-venues
+				display: block
+				margin-bottom: 20px
+				.owl-controls
+					width: 33.4%
+
+				.detail
+					text-align: center
+					padding: 5% 3%
+					color: $mw-white
+					&:after
+						content: ''
+						background: url(../images/pin.svg) no-repeat left bottom
+						padding: 20px
+						position: absolute
+						bottom: -130px
+						right: 20px
+					h2 
+						color: $mw-white
+						font-family: $HELVBLCD
+						line-height: 1
+						font-size: 1.9em
+						text-transform: uppercase
+					p
+						font-family: $HELVLG
+						margin: 0 
+					span
+						border: 1px solid $mw-gray-regular
+						+border-radius(3px)
+						padding: 2px 30px
+						+transition( color, 0.2s, ease-in-out )
+						a
+							color: $mw-gray-regular
+				.owl-item
+					background: $mw-gray-ft
+
+			.slider-home	
+				position: relative
+				.owl-controls
+					position: absolute
+					top: 50%
+					left: 50%
+					width: 460px
+					margin-left: -230px
+					height: 50px
+					margin-top: 125px
+					.owl-nav
+						width: 110px
+						.owl-prev, 
+						.owl-next
+							+transition( all, 0.2s, ease-in-out )
+							width: 50px
+							height: 50px
+							&:hover
+								+opacity(0.8)
+						.owl-prev
+							background-position: 10px -344px 
+							background-color: $mw-black
+						.owl-next
+							background-position: 7px -440px
+							background-color: $mw-white
+							
+				.owl-stage-outer
+					max-height: 700px 
+					.container-image
+						&:before
+							content: ''
+							position: absolute
+							left: 0
+							top: 0
+							width: 100%
+							height: 100%
+							background: $mw-black-alpha
+							z-index: 1
+					
+					.detail
+						position: absolute
+						left: 50%
+						top: 50%
+						margin: -75px 0 0 -230px
+						z-index: 2
+						text-align: left
+						width: 460px
+						.link
+							position: absolute
+							left: 0
+							top: 0
+							width: 100%
+							height: 100%
+							z-index: 2
+						h2 
+							font: 240% $HELVBLCD
+							color: $mw-white
+							text-transform: uppercase
+							margin: 0
+						p 
+							font: 1em $HELV
+							color: $mw-white
+							width: 50%
+							line-height: 1.3em
+			.slider-events
+				display: block
+				position: relative
+				margin-bottom: 20px
+				.link-to-all
+					top: -25px
+				.owl-controls
+					width: 41.7%
+					top: auto
+					position: absolute
+					right: 0
+					bottom: 0
+					.owl-dots
+						margin: 0
+				.detail
+					text-align: center
+					padding: 0 3%
+					color: $mw-black-text
+					position: relative
+
+					h2 
+						font-family: $HELVBLCD
+						line-height: 1
+						font-size: 1.8em
+					p
+						font-family: $HELVLG
+					span
+						border: 1px solid $mw-gray-regular
+						+border-radius(3px)
+						padding: 2px 30px
+						&:hover
+							border-color: $mw-red
+							a
+								color: $mw-red
+								text-decoration: none
+						a
+							color: $mw-gray-regular
+			.press-home
+				.link-to-all
+					top: 0
+					margin-top: 10px
+					margin-bottom: 20px
+				.item
+					padding: 5px
+					.container-item
+						display: inline-block
+						border: solid 1px $mw-gray-border-soft
+						text-align: center
+						padding: 10px
+						+transition( all, 0.2s, ease-in-out )
+						min-height: 360px
+						max-height: 360px
+						&:hover
+							background: $mw-gray-ultraLight
+							.detail	
+								.link
+									color: $mw-red
+						.container-image
+							img
+								width: 100%
+						.detail
+							.link
+								width: 100%
+								text-align: center
+								font: 0.9em $HELVBLCD
+								color: $mw-gray-past
+								display: block
+								margin: 30px 0px 20px 0px
+								+transition( color, 0.2s, ease-in-out )
+								&:hover
+									color: $mw-red
+									text-decoration: none
+							span
+								width: 100%
+								color: $mw-blue
+								font: 0.8em $HELVLG
+								margin: 20px 0
+								display: block
+							h2
+								font: 1.2em $HELVBLCD
+								margin: 10px 0
+
+			.instagram-feed
+				margin-bottom: 20px
+				border-top: 1px solid $mw-gray-ultraLight
+				border-bottom: 1px solid $mw-gray-ultraLight
+				padding: 40px 0
+				margin: 30px 0
+				.slider-item
+					width: 20%
+					float: left
+					&:first-child
+						width: 40%
+						position: relative
+						&:before
+							content: 'Instagram'
+							width: 50%
+							font: 1.3em $HELVBLCD
+							color: $mw-blue
+							text-transform: uppercase
+							height: 40px
+							position: relative
+							float: left
+							text-align: center
+							top: 95px
+							background: url(../images/mw.svg) no-repeat 70px 2px
+							padding: 15px
+
+					header
+						display: none
+
+			.twitter 
+				margin-bottom: 20px
+				.owl-controls
+					.owl-dots
+						display: none!important
+
+				margin-top: 20px
+				margin-bottom: 50px
+				.title-twitter
+					font: 1.3em $HELVBLCD
+					color: $mw-blue
+					text-transform: uppercase
+					text-align: center
+					position: relative
+					padding: 45px 0
+					background: url(../images/mw.svg) no-repeat 62px 32px
+				.twitter-contents
+					.owl-carousel
+						margin: 0
+						padding: 0
+						list-style: none
+						.owl-item
+							background: $mw-white
+							.tweet
+								float: left
+								font: 1.6em $HELVLT
+								width: 89.9%
+								margin: 0
+								line-height: 1
+								padding-top: 5px
+								a
+									color: $mw-blue
+								img
+									width: 17px
+									display: inline
+							.user
+								float: left
+								width: 8.5%
+								margin-right: 1.5%
+								height: 87px 
+								position: relative
+								background: $mw-black
+								img
+									width: auto
+									position: absolute
+									left: 50%
+									top: 50%
+									margin-left: -24px
+									margin-top: -24px
+								span
+									display: none
+
+		.footer-bottom
+			font: 0.9em $HELVLG
+			display: inline-block
+			width: 100%
+			color: $mw-gray-ft
+			text-align: left
+			padding: 15px 0
+			position: relative
+
+			.row
+				max-width: 98em
+				float: none
+				margin: 0 auto
+				font-size: 0.85em
+				.rights
+					text-align: right
+				a
+					color: $mw-gray-ft
+
+		.site-footer
+			width: 100%
+			float: left
+			background: $mw-gray-footer
+			.row
+				background: url(../images/image-footer.svg) no-repeat left top
+				max-width: 85.7em
+				.container-footer
+					float: none
+					margin: 0 auto
+					padding: 44px 0 23px 0
+					display: inline-block
+					.menu
+						padding: 0
+						margin: 0
+						list-style: none
+						.menu-item
+							a									
+								&[title~="map"]
+									background: url(../images/map.png) no-repeat center top
+									padding: 10px
+									text-indent: -9999px
+									position: absolute
+									right: 0
+									top: 7px
+									width: 180px
+									height: 180px
+									&.clicked
+										top: -90px
+
+						.menu-item-has-children
+							width: 27%
+							float: left
+							text-align: left
+							list-style: none
+							a
+								display: none
+							.sub-menu
+								list-style: none
+								margin: 0
+								padding: 0
+								a 
+									display: block
+									padding: 5px
+									color: $mw-gray-ft
+									font: 0.9em $HELVLG
