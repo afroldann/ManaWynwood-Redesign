@@ -18,6 +18,20 @@
 		});
 	});
 
+	function animateElemScroll() {
+  		_window.on('scroll', function(){
+	  		$('.section').each( function(i){    
+		        var bottom_of_object = $(this).position().top + $(this).outerHeight();
+		        var bottom_of_window = $(window).scrollTop() + $(window).height();
+		        bottom_of_window = bottom_of_window + 400;  
+		      
+		        if( bottom_of_window > bottom_of_object ){
+		            $(this).addClass('animated fadeIn');
+		        }
+	    	}); 
+  		})
+  	}
+  	animateElemScroll();
 
 	function scrollMenu(){
 		windowOffset = _window.scrollTop();
@@ -42,8 +56,8 @@
 	scrollMenu();
 
 	$("#instafeed").instastream({
-		instaToken: '309308639.467ede5.2e84266747e74a9c9affb98beb7351e1',// More information on http://instagram.com/developer/
-		instaUser: '309308639',//
+		instaToken: '309308639.5b9e1e6.7756f658dfa840218be3d2b85bdee89f',
+		instaUser: '309308639',
 		instaResults: 9,
 		instaMenu: 'not'
 	});

@@ -23,9 +23,13 @@ html
 			position: relative
 		.columns 
 			padding: 0
-		
-		// header styles css
-		//==============================
+		.section
+			+opacity(0)
+			+transition( opacity, 0.2s, ease-in-out )
+		.owl-item
+			+opacity(0)
+			&.active
+				+opacity(1)
 		.owl-nav	
 			width: 85px
 			float: right
@@ -46,6 +50,13 @@ html
 				padding-left: 35px
 				text-transform: uppercase
 				background: url( ../images/mw.svg ) no-repeat center left
+				&:after
+					+transition( padding, 0.2s, ease-in-out )
+					content: "⟩"
+					font: bold 0.8em $HELVBLCDBL
+					padding-left: 15px
+					position: relative
+					top: -2px
 		.header
 			margin-top: 30px
 			margin-bottom: 20px
@@ -205,6 +216,8 @@ html
 						height: 10px
 
 		&.home
+			.carousel-home
+				margin-bottom: 30px
 			.slider-venues
 				display: block
 				margin-bottom: 20px
@@ -419,6 +432,10 @@ html
 			.twitter 
 				margin-bottom: 20px
 				.owl-controls
+					.owl-nav
+						.owl-prev
+							+opacity(0)
+							visibility: hidden
 					.owl-dots
 						display: none!important
 

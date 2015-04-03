@@ -106,6 +106,34 @@ function optionsframework_options() {
 			'id' => 'rights',
 			'std' => '',
 			'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Twitter API', 'options_check'),
+		'type' => 'heading');
+		$options[] = array(
+			'name' => __('Insert a Twitter ID from widget twitter account', 'options_check'),
+			'desc' => __('Twitter ID.', 'options_check'),
+			'id' => 'twitterID',
+			'std' => '',
+			'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Instagram API', 'options_check'),
+		'type' => 'heading');
+		$options[] = array(
+			'name' => __('Insert a Instagram Token', 'options_check'),
+			'desc' => __('insta Token.', 'options_check'),
+			'id' => 'instToken',
+			'std' => '',
+			'type' => 'text');
+		
+		$options[] = array(
+			'name' => __('Insert a Instagram User number', 'options_check'),
+			'desc' => __('insta User Numbre.', 'options_check'),
+			'id' => 'instaUser',
+			'std' => '',
+			'type' => 'text');
+
 	/*$options[] = array(
 		'name' => __('Textarea', 'options_check'),
 		'desc' => __('Textarea description.', 'options_check'),

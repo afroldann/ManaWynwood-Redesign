@@ -17,7 +17,7 @@
 				</div>
 		    </section>
 			
-			<section class="slider-events large-12 columns">
+			<section class="section slider-events large-12 columns">
 				<div class="title"><h4>EVENTS</h4></div>
 				<div class="owl-carousel slider-events large-12 columns" id="carousel-events">
 				<?php query_posts( 'post_type=sc_event' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
@@ -37,7 +37,7 @@
 		    	<a class="link-to-all" href="#">All Events</a>
 			</section>
 
-			<section class="slider-venues large-12 columns">
+			<section class="section slider-venues large-12 columns">
 				<div class="title"><h4>VENUES</h4></div>
 				<div class="owl-carousel slider-venues large-12 columns" id="carousel-venues">
 				<?php query_posts( 'post_type=venue' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
@@ -56,7 +56,7 @@
 				<a class="link-to-all" href="#">All Venues</a>
 			</section>
 
-			<section class="press-home large-12 columns">
+			<section class="section press-home large-12 columns">
 				<div class="title"><h4>Press</h4></div>
 				<div class="press-list large-12 columns" id="press-items">
 				<?php query_posts( 'post_type=press&posts_per_page=4' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
@@ -77,11 +77,11 @@
 		    	<a class="link-to-all" href="#">All Press</a>
 			</section>
 
-			<section class="instagram-feed large-12 columns">
+			<section class="section instagram-feed large-12 columns">
 				<div id="instafeed" class="instagram"></div>
 			</section>			
 
-			<section class="twitter large-12 columns">
+			<section class="section twitter large-12 columns">
 				<div class="title-twitter large-2 columns">twitter</div>
 				<div id="twitter-feed" class="twitter-contents large-10 columns"></div>
 			</section>
