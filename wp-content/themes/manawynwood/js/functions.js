@@ -55,16 +55,22 @@
 	}
 	scrollMenu();
 
-	$("#instafeed").instastream({
-		instaToken: '309308639.5b9e1e6.7756f658dfa840218be3d2b85bdee89f',
-		instaUser: '309308639',
-		instaResults: 9,
-		instaMenu: 'not'
-	});
+	function instagramFeed(){
+		var token = $('#insToken').val(),
+			user = $('#insUser').val();
+		$("#instafeed").instastream({
+			instaToken: token,
+			instaUser: user,
+			instaResults: 9,
+			instaMenu: 'not'
+		});
+	}
+	instagramFeed();
 
 	function Tweets(){
+		var _twitterID = $('#twitterIDInput').val();
 		var twtterFeed = {
-			"id": '568075716097343488',
+			"id": _twitterID,
 			"domId": 'twitter-feed',
 			"maxTweets": 10,
 			"enableLinks": true, 
@@ -78,7 +84,7 @@
 		function loadSlider(){
 			setTimeout(function(){
 				var _elTweets = $('.twitter-contents ul'); 
-				_elTweets.owlCarousel({
+				$('.twitter-contents ul').owlCarousel({
 					items: 1,
 					lazyLoad: true,
 					nav: true,
@@ -90,7 +96,7 @@
 					autoplayTimeout: 5000,
 					autoplayHoverPause: true
 				});	
-			},600);
+			},1000);
 		}
 		loadSlider();
 	}

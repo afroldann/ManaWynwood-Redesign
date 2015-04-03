@@ -33,14 +33,15 @@ function sc_setup_post_types() {
 		'public' 				=> true,
 		'publicly_queryable' 	=> true,
 		'show_ui' 				=> true,
+		'has_archive' 			=> true,
 		'show_in_menu' 			=> true,
 		'query_var' 			=> true,
+		'taxonomies' 			=> array('category', 'post_tag'),
 		'rewrite' 				=> apply_filters( 'sc_event_rewrite', array( 'slug' => 'events', 'with_front' => false ) ),
 		'capability_type' 		=> apply_filters( 'sc_event_capability_type', 'post' ),
-		'has_archive' 			=> true,
 		'hierarchical' 			=> false,
 		'menu_icon'				=> 'dashicons-calendar',
-		'supports' 				=> apply_filters( 'sc_event_supports', array( 'title', 'editor', 'thumbnail' ) ),
+		'supports' 				=> apply_filters( 'sc_event_supports', array( 'title', 'editor', 'thumbnail', 'excerpt' ) ),
 	);
 	register_post_type('sc_event', $event_args);
 

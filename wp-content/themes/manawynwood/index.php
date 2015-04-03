@@ -29,14 +29,14 @@
 							<a class="link" href="#"></a>
 							<h2><?php the_title(); ?></h2>
 			        		<p><?php echo word_count(get_the_excerpt(), '15') . '...'; ?></p>
-			        		<span><a href="#">22.10.15</a></span>
+			        		<div class="date-event"><?php the_content(); ?></div>
 						</div>
 			    	</div>
 				<?php endwhile; endif; wp_reset_query(); ?> 
 				</div>
 		    	<a class="link-to-all" href="#">All Events</a>
 			</section>
-
+			
 			<section class="section slider-venues large-12 columns">
 				<div class="title"><h4>VENUES</h4></div>
 				<div class="owl-carousel slider-venues large-12 columns" id="carousel-venues">
@@ -53,7 +53,7 @@
 			    	</div>
 				<?php endwhile; endif; wp_reset_query(); ?> 
 				</div>
-				<a class="link-to-all" href="#">All Venues</a>
+				<a class="link-to-all" href="<?php echo home_url( '/' ).'venue' ?>">All Venues</a>
 			</section>
 
 			<section class="section press-home large-12 columns">
@@ -78,10 +78,13 @@
 			</section>
 
 			<section class="section instagram-feed large-12 columns">
+				<input id="insUser" type="hidden" value="<?php echo of_get_option('instauser'); ?>">
+				<input id="insToken" type="hidden" value="<?php echo of_get_option('insttoken'); ?>">
 				<div id="instafeed" class="instagram"></div>
 			</section>			
 
 			<section class="section twitter large-12 columns">
+				<input id="twitterIDInput" type="hidden" value="<?php echo of_get_option('twitterid'); ?>">
 				<div class="title-twitter large-2 columns">twitter</div>
 				<div id="twitter-feed" class="twitter-contents large-10 columns"></div>
 			</section>

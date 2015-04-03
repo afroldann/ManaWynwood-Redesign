@@ -21,13 +21,26 @@ function sc_event_content_hooks($content) {
 			do_action('sc_after_event_content', $post->ID);
 		$content = ob_get_clean();
 	}
+	if($post->post_type == 'sc_event' && is_archive()) {
+		ob_start();
+			do_action('sc_before_event_content', $post->ID);
+			echo $content;
+			do_action('sc_after_event_content', $post->ID);
+		$content = ob_get_clean();
+	}
+	if($post->post_type == 'sc_event' && is_page()) {
+		ob_start();
+			do_action('sc_before_event_content', $post->ID);
+			echo $content;
+			do_action('sc_after_event_content', $post->ID);
+		$content = ob_get_clean();
+	}
 	return $content;
 }
 add_filter('the_content', 'sc_event_content_hooks');
 
 function sc_add_event_details($event_id) {
 	ob_start(); ?>
-	
 	<div class="sc_event_details" id="sc_event_details_<?php echo $event_id; ?>">
 		<div class="sc_event_details_inner">
 			<div class="sc_event_date"><?php echo __('Date:', 'pippin_sc') . ' ' . sc_get_event_date($event_id); ?></div>
@@ -35,9 +48,15 @@ function sc_add_event_details($event_id) {
 				<span class="sc_event_start_time"><?php echo __('Time:', 'pippin_sc') . ' ' . sc_get_event_start_time($event_id); ?></span>
 				<span class="sc_event_time_sep">&nbsp;<?php _e('to', 'pippin_sc'); ?>&nbsp;</span>
 				<span class="sc_event_end_time"><?php echo sc_get_event_end_time($event_id); ?></span>
-			</div><!--end .sc_event_time-->
-		</div><!--end .sc_event_details_inner-->
-	</div><!--end .sc_event_details-->
+			</div>
+		</div>
+	</div>
+
+	<span class="event-date-only" id="sc_event_details_<?php echo $event_id; ?>">
+		<a href="<?php echo get_permalink(); ?>">
+			<?php echo __() . ' ' . sc_get_event_date($event_id); ?>
+		</a>
+	</span>
 	
 	<?php
 	echo ob_get_clean();

@@ -1,22 +1,13 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
-
-get_header(); ?>
-
+<?php get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<?php?>
+			<?php /*the loop*/ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+			<?php the_content(); ?>
+			<?php the_post_thumbnail() ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 		</div>
-		<div id="demo"></div>
 	</div>
 <?php get_footer(); ?>

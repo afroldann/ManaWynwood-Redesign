@@ -343,8 +343,15 @@ html
 						font-family: $HELVBLCD
 						line-height: 1
 						font-size: 1.8em
+						min-height: 100px
 					p
 						font-family: $HELVLG
+						min-height: 100px
+					.date-event
+						.sc_event_details
+							display: none
+						p
+							display: none
 					span
 						border: 1px solid $mw-gray-regular
 						+border-radius(3px)
@@ -401,90 +408,90 @@ html
 								font: 1.2em $HELVBLCD
 								margin: 10px 0
 
-			.instagram-feed
-				margin-bottom: 20px
-				border-top: 1px solid $mw-gray-ultraLight
-				border-bottom: 1px solid $mw-gray-ultraLight
-				padding: 40px 0
-				margin: 30px 0
-				.slider-item
-					width: 20%
-					float: left
-					&:first-child
-						width: 40%
-						position: relative
-						&:before
-							content: 'Instagram'
-							width: 50%
-							font: 1.3em $HELVBLCD
-							color: $mw-blue
-							text-transform: uppercase
-							height: 40px
-							position: relative
-							float: left
-							text-align: center
-							top: 95px
-							background: url(../images/mw.svg) no-repeat 70px 2px
-							padding: 15px
-
-					header
-						display: none
-
-			.twitter 
-				margin-bottom: 20px
-				.owl-controls
-					.owl-nav
-						.owl-prev
-							+opacity(0)
-							visibility: hidden
-					.owl-dots
-						display: none!important
-
-				margin-top: 20px
-				margin-bottom: 50px
-				.title-twitter
-					font: 1.3em $HELVBLCD
-					color: $mw-blue
-					text-transform: uppercase
-					text-align: center
+		.instagram-feed
+			margin-bottom: 20px
+			border-top: 1px solid $mw-gray-ultraLight
+			border-bottom: 1px solid $mw-gray-ultraLight
+			padding: 40px 0
+			margin: 30px 0
+			.slider-item
+				width: 20%
+				float: left
+				&:first-child
+					width: 40%
 					position: relative
-					padding: 45px 0
-					background: url(../images/mw.svg) no-repeat 62px 32px
-				.twitter-contents
-					.owl-carousel
-						margin: 0
-						padding: 0
-						list-style: none
-						.owl-item
-							background: $mw-white
-							.tweet
-								float: left
-								font: 1.6em $HELVLT
-								width: 89.9%
-								margin: 0
-								line-height: 1
-								padding-top: 5px
-								a
-									color: $mw-blue
-								img
-									width: 17px
-									display: inline
-							.user
-								float: left
-								width: 8.5%
-								margin-right: 1.5%
-								height: 87px 
-								position: relative
-								background: $mw-black
-								img
-									width: auto
-									position: absolute
-									left: 50%
-									top: 50%
-									margin-left: -24px
-									margin-top: -24px
-								span
-									display: none
+					&:before
+						content: 'Instagram'
+						width: 50%
+						font: 1.3em $HELVBLCD
+						color: $mw-blue
+						text-transform: uppercase
+						height: 40px
+						position: relative
+						float: left
+						text-align: center
+						top: 95px
+						background: url(../images/mw.svg) no-repeat 70px 2px
+						padding: 15px
+
+				header
+					display: none
+
+		.twitter 
+			margin-bottom: 20px
+			.owl-controls
+				.owl-nav
+					.owl-prev
+						+opacity(0)
+						visibility: hidden
+				.owl-dots
+					display: none!important
+
+			margin-top: 20px
+			margin-bottom: 50px
+			.title-twitter
+				font: 1.3em $HELVBLCD
+				color: $mw-blue
+				text-transform: uppercase
+				text-align: center
+				position: relative
+				padding: 45px 0
+				background: url(../images/mw.svg) no-repeat 62px 32px
+			.twitter-contents
+				.owl-carousel
+					margin: 0
+					padding: 0
+					list-style: none
+					.owl-item
+						background: $mw-white
+						.tweet
+							float: left
+							font: 1.6em $HELVLT
+							width: 89.9%
+							margin: 0
+							line-height: 1
+							padding-top: 5px
+							a
+								color: $mw-blue
+							img
+								width: 17px
+								display: inline
+						.user
+							float: left
+							width: 8.5%
+							margin-right: 1.5%
+							height: 87px 
+							position: relative
+							background: $mw-black
+							img
+								width: auto
+								position: absolute
+								left: 50%
+								top: 50%
+								margin-left: -24px
+								margin-top: -24px
+							span
+								display: none
 
 		.footer-bottom
 			font: 0.9em $HELVLG

@@ -96,7 +96,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __('PolicyTerms of Use', 'options_check'),
 			'desc' => __('link to PolicyTerms of Use.', 'options_check'),
-			'id' => 'PolicyTerms',
+			'id' => 'terms',
 			'std' => '',
 			'type' => 'text');
 
@@ -113,7 +113,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __('Insert a Twitter ID from widget twitter account', 'options_check'),
 			'desc' => __('Twitter ID.', 'options_check'),
-			'id' => 'twitterID',
+			'id' => 'twitterid',
 			'std' => '',
 			'type' => 'text');
 
@@ -123,14 +123,14 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __('Insert a Instagram Token', 'options_check'),
 			'desc' => __('insta Token.', 'options_check'),
-			'id' => 'instToken',
+			'id' => 'insttoken',
 			'std' => '',
 			'type' => 'text');
 		
 		$options[] = array(
 			'name' => __('Insert a Instagram User number', 'options_check'),
 			'desc' => __('insta User Numbre.', 'options_check'),
-			'id' => 'instaUser',
+			'id' => 'instauser',
 			'std' => '',
 			'type' => 'text');
 
