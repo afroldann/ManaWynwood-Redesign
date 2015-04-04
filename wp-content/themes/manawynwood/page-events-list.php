@@ -55,13 +55,12 @@
 			</div>
 
 			<div class="large-12 columns full-posts">
-				<?php $query = query_posts( 'post_type=sc_event&posts_per_page=-1&offset=3' ); if (have_posts() ) : while(have_posts()) : the_post(); 
+				<?php $query = query_posts( 'post_type=sc_event&offset=3' ); if (have_posts() ) : while(have_posts()) : the_post(); 
 					$category = get_the_category();
 					$cat_name = ($category[0]->cat_name);
 				?>
 		    	<div class="item large-3 columns <?php echo $cat_name ?>">
 			  		<div class="content-item">
-						<a class="link" href="<?php echo get_permalink(); ?>"></a>
 				  		<div class="large-12 columns container-image">
 				    		<?php if ( has_post_thumbnail() ) { the_post_thumbnail('rs-tmb'); } else {echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/broke-image.jpg" />'; }?>
 				    	</div>
@@ -70,6 +69,8 @@
 			        		<div class="date-event"><?php the_content(); ?></div>
 			        		<p><?php echo word_count(get_the_excerpt(), '15') . '...'; ?></p>
 						</div>
+						<a class="link" href="<?php echo get_permalink(); ?>"></a>
+						<h3><?php the_title(); ?></h3>
 					</div>
 		    	</div>
 				<?php endwhile; endif; wp_reset_query(); ?> 

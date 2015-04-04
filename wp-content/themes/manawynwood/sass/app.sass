@@ -221,10 +221,19 @@ html
 					padding: 2px 0 0 2px
 					position: relative
 					margin: 0 0 20px 0
+					&:last-child
+						float: left
 					&:hover
 						.content-item
 							&:after
 								+opacity(1)
+							h3
+								+opacity(1)
+								padding: 20px 20px
+							.link
+								&:after
+									margin-top: 0
+									+opacity(1)
 					.content-item
 						.link
 							position: absolute
@@ -232,7 +241,50 @@ html
 							top: 0
 							width: 100%
 							height: 100%
-							z-index: 1
+							z-index: 3
+							
+							&:after
+								content: '▸'
+								position: absolute
+								font: 1em $HELVLG
+								text-transform: capitalize
+								color: $mw-white
+								+border-radius(100%)
+								z-index: 2
+								text-align: center
+								padding-top: 10px
+								font-size: 1.7em
+								left: 50%
+								top: 50%
+								width: 55px
+								height: 55px
+								margin-left: -22.5px
+								margin-top: -22.5px
+								+opacity(0)
+								margin-top: 50px
+								+transition( all, 0.6s, ease )
+													
+						h3
+							color: $mw-white
+							font: 1.2em $HELVBLCD
+							text-align: center
+							width: 100%
+							margin: 30px 0
+							padding: 0 20px
+							position: absolute
+							+opacity(0)
+							z-index: 2
+							+transition( all, 0.5s, ease )
+
+							&:before
+								content: ''
+								position: absolute
+								z-index: 1
+								font: 0.9em HELVLG
+								text-transform: capitalize
+								left: 0
+								top: 75px
+								width: 100%
 						&:after
 							content: ""
 							position: absolute
@@ -240,27 +292,58 @@ html
 							top: 5px
 							width: 99.2%
 							height: 100%
-							background: $mw-black-alpha
+							background: $mw-black-alpha-dark
 							+opacity(0)
 							+transition(opacity, 0.3s, ease)
 					&.up-comming
-						.container-image
-							border-top: 3px solid $mw-blue
+						.content-item
+							h3
+								&:before
+									content: 'Up comming'
+									color: $mw-blue
+							.link
+								&:before
+									color: $mw-blue
+								&:after
+									background: $mw-blue
+							.container-image
+								border-top: 3px solid $mw-blue
 					&.current
-						.container-image
-							border-top: 3px solid $mw-red
+						.content-item
+							h3
+								&:before
+									content: 'current'
+									color: $mw-red
+							.link
+								&:before
+									color: $mw-red
+								&:after
+									background: $mw-red
+							.container-image
+								border-top: 3px solid $mw-red
 					&.past
-						.container-image
-							border-top: 3px solid $mw-gray-past
-							img
-								-webkit-filter: grayscale(100%)
-								-moz-filter: grayscale(100%)
-								-ms-filter: grayscale(100%)
-								-o-filter: grayscale(100%)
-								filter: grayscale(100%)
-								filter: url(../images/grayscale.svg)
-								filter: gray
-								
+						.content-item
+							h3
+								&:before
+									content: 'past'
+									color: $mw-gray-past
+							.link
+								&:before
+									color: $mw-white
+								&:after
+									background: $mw-white
+									color: $mw-gray-past
+							.container-image
+								border-top: 3px solid $mw-gray-past
+								img
+									-webkit-filter: grayscale(100%)
+									-moz-filter: grayscale(100%)
+									-ms-filter: grayscale(100%)
+									-o-filter: grayscale(100%)
+									filter: grayscale(100%)
+									filter: url(../images/grayscale.svg)
+									filter: gray
+
 					.container-image
 						&:after
 							content: ''
@@ -286,14 +369,15 @@ html
 							font: 1.2em $HELVBLCD
 							text-align: center
 							line-height: 1
-							margin: 15px 0 
-							min-height: 50px
+							margin: 10px 0 
+							min-height: 40px
 						p
 							font-family: $HELVLG
-							margin: 20px auto
+							margin: 10px auto
 							max-width: 95%
 							color: $mw-gray-past
 							+opacity(1)
+							line-height: 1.3em
 
 						span
 							padding: 2px 30px
