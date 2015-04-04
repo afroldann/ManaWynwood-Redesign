@@ -215,7 +215,273 @@ html
 						background: $mw-red
 						width: 10px
 						height: 10px
+		.events
+			.full-posts
+				.item
+					padding: 2px 0 0 2px
+					position: relative
+					margin: 0 0 20px 0
+					&:hover
+						.content-item
+							&:after
+								+opacity(1)
+					.content-item
+						.link
+							position: absolute
+							left: 0
+							top: 0
+							width: 100%
+							height: 100%
+							z-index: 1
+						&:after
+							content: ""
+							position: absolute
+							left: 2px
+							top: 5px
+							width: 99.2%
+							height: 100%
+							background: $mw-black-alpha
+							+opacity(0)
+							+transition(opacity, 0.3s, ease)
+					&.up-comming
+						.container-image
+							border-top: 3px solid $mw-blue
+					&.current
+						.container-image
+							border-top: 3px solid $mw-red
+					&.past
+						.container-image
+							border-top: 3px solid $mw-gray-past
+							img
+								-webkit-filter: grayscale(100%)
+								-moz-filter: grayscale(100%)
+								-ms-filter: grayscale(100%)
+								-o-filter: grayscale(100%)
+								filter: grayscale(100%)
+								filter: url(../images/grayscale.svg)
+								filter: gray
+								
+					.container-image
+						&:after
+							content: ''
+							position: absolute
+							width: 100%
+							height: 100%
+							background: $mw-black-alpha-soft
+							top: 0
+							left: 0
+							+transition( background-color, 0.3s, ease-in-out )
+						img
+							width: 100%
+					.detail
+						width: 100%
+						padding: 0 10px
+						text-align: center
+						bottom: 0
+						overflow: hidden
+						+transition(height, 0.3s, ease )
 
+						h2
+							color: $mw-black
+							font: 1.2em $HELVBLCD
+							text-align: center
+							line-height: 1
+							margin: 15px 0 
+							min-height: 50px
+						p
+							font-family: $HELVLG
+							margin: 20px auto
+							max-width: 95%
+							color: $mw-gray-past
+							+opacity(1)
+
+						span
+							padding: 2px 30px
+							position: relative
+							a
+								color: $mw-blue
+								font-family: 0.9em $HELVLG
+							
+						.sc_event_details
+							display: none
+						.date-event
+							+transition(all, 0.5s, ease-out )
+							+opacity(1)
+							p
+								display: none
+			.latest-three
+				.item
+					padding: 2px 0 0 2px
+					position: relative
+					&:before
+						position: absolute
+						font: 1em $HELVLG
+						text-transform: capitalize
+						color: $mw-white
+						+border-radius(100%)
+						z-index: 2
+						text-align: center
+						padding-top: 5px
+						font-size: 1.4em
+						left: 10px
+						top: 10px
+						width: 40px
+						height: 40px
+
+					&:after
+						position: absolute
+						top: 0
+						left: 0
+						z-index: 1
+						font: 0.9em $HELVLG
+						text-transform: capitalize
+						left: 60px
+						top: 20px
+
+					&.current
+						&:before
+							content: '▸'
+							background: $mw-red
+						&:after
+							color: $mw-red
+							content: 'current'
+				
+					&.up-comming
+						&:before
+							content: '▸'
+							background: $mw-blue
+						&:after
+							color: $mw-blue
+							content: 'Up Comming'
+				
+					&.past
+						.container-image
+							img
+								-webkit-filter: grayscale(100%)
+								-moz-filter: grayscale(100%)
+								-ms-filter: grayscale(100%)
+								-o-filter: grayscale(100%)
+								filter: grayscale(100%)
+								filter: url(../images/grayscale.svg)
+								filter: gray
+
+						&:before
+							content: '▸'
+							background: $mw-gray
+						&:after
+							color: $mw-white
+							content: 'past'
+					&:nth-child(2)
+						&:hover
+							.detail
+								height: 75%
+						.detail
+							height: 70px
+							h2
+								font-size: 1.3em
+								margin: 0 0 20px 0
+								text-transform: uppercase
+							p
+								max-width: 90%
+								line-height: 1.2em
+							span 
+								a
+									font-size: 0.9em
+
+					&:nth-child(3)
+						&:hover
+							.detail
+								height: 75%
+						.detail
+							height: 70px
+							h2
+								font-size: 1.3em
+								margin: 0 0 20px 0
+								text-transform: uppercase
+							p
+								max-width: 90%
+								line-height: 1.2em
+							span 
+								a
+									font-size: 0.9em
+					&:hover
+						.detail
+							height: 78%
+							p
+								margin: 20px auto
+								+opacity(1)
+							.date-event
+								+opacity(1)
+								padding-top: 0
+						.container-image
+							&:after
+								background: $mw-black-alpha-dark
+									
+					.container-image
+						&:after
+							content: ''
+							position: absolute
+							width: 100%
+							height: 100%
+							background: $mw-black-alpha-soft
+							top: 0
+							left: 0
+							+transition( background-color, 0.3s, ease-in-out )
+						img
+							width: 100%
+					.detail
+						position: absolute
+						width: 100%
+						height: 130px
+						padding: 0 10px
+						text-align: center
+						bottom: 0
+						overflow: hidden
+						+transition(height, 0.3s, ease )
+
+						h2
+							color: $mw-white
+							font: 2.3em $HELVBLCD
+							text-align: center
+							line-height: 1
+						p
+							font-family: $HELVLG
+							margin: 20px auto
+							max-width: 50%
+							color: $mw-white
+							+opacity(0)
+							+transition( opacity, 0.2s, ease-in-out )
+
+						.link
+							position: absolute
+							left: 0
+							top: 0
+							width: 100%
+							height: 100%
+							z-index: 1
+						span
+							border: 1px solid $mw-white
+							+border-radius(3px)
+							padding: 2px 30px
+							+transition( all, 0.3s, ease-in-out )
+							z-index: 2
+							position: relative
+							a
+								color: $mw-white
+							&:hover
+								border-color: $mw-red
+								a
+									color: $mw-red
+									text-decoration: none
+
+						.sc_event_details
+							display: none
+						.date-event
+							+transition(all, 0.5s, ease-out )
+							+opacity(0)
+							padding-top: 50px
+							p
+								display: none
 		&.home
 			.carousel-home
 				margin-bottom: 30px

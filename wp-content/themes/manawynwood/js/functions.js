@@ -17,6 +17,7 @@
 			return false;
 		});
 	});
+	
 
 	function animateElemScroll() {
   		_window.on('scroll', function(){
@@ -36,7 +37,7 @@
 	function scrollMenu(){
 		windowOffset = _window.scrollTop();
 		
-		if( windowOffset >= 80 ){
+		if( windowOffset >= 124 ){
 			_header.addClass('scrolled animated fadeInDown	');
 		}else {
 			_header.removeClass('scrolled animated fadeInDown	');
@@ -54,54 +55,6 @@
 		});
 	}
 	scrollMenu();
-
-	function instagramFeed(){
-		var token = $('#insToken').val(),
-			user = $('#insUser').val();
-		$("#instafeed").instastream({
-			instaToken: token,
-			instaUser: user,
-			instaResults: 9,
-			instaMenu: 'not'
-		});
-	}
-	instagramFeed();
-
-	function Tweets(){
-		var _twitterID = $('#twitterIDInput').val();
-		var twtterFeed = {
-			"id": _twitterID,
-			"domId": 'twitter-feed',
-			"maxTweets": 10,
-			"enableLinks": true, 
-			"showUser": true,
-			"showTime": false,
-			"lang": 'en',
-			"showInteraction": false
-		};
-		twitterFetcher.fetch(twtterFeed);
-
-		function loadSlider(){
-			setTimeout(function(){
-				var _elTweets = $('.twitter-contents ul'); 
-				$('.twitter-contents ul').owlCarousel({
-					items: 1,
-					lazyLoad: true,
-					nav: true,
-					autoHeight: true,
-    				animateIn: 'fadeInLeft',
-					animateOut: 'fadeOutRight',
-					loop: true,
-					autoplay: true,
-					autoplayTimeout: 5000,
-					autoplayHoverPause: true
-				});	
-			},1000);
-		}
-		loadSlider();
-	}
-
-	Tweets();
 
 	$('html').niceScroll();
 
