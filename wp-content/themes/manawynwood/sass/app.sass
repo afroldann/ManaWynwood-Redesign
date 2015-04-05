@@ -217,10 +217,72 @@ html
 						height: 10px
 		.events
 			.full-posts
+				.filter
+					padding: 0
+					margin: 10px 0
+					list-style: none
+					li
+						text-align: center
+						&.current
+							a
+								color: $mw-white
+								&.curren-event
+									color: $mw-white
+									background: $mw-red
+								&.upcomming-event
+									color: $mw-white
+									background: $mw-blue
+								&.past-event
+									color: $mw-white
+									background: $mw-gray-past
+								&.all-events
+									color: $mw-white
+									background: $mw-black
+						a
+							display: inline-block
+							width: 100%
+							height: 100%
+							padding: 15px
+							font: 1em $HELVLG
+							text-transform: capitalize
+							+transition( all, 0.3s, ease )
+							&:hover
+								text-decoration: none
+
+							&.curren-event
+								color: $mw-red
+								border-bottom: 3px solid $mw-red
+								&:hover
+									background: $mw-red
+									color: $mw-white
+
+							&.upcomming-event
+								color: $mw-blue
+								border-bottom: 3px solid $mw-blue
+								&:hover
+									background: $mw-blue
+									color: $mw-white
+
+							&.past-event
+								color: $mw-gray-past
+								border-bottom: 3px solid $mw-gray-past
+								&:hover
+									background: $mw-gray-past
+									color: $mw-white
+
+							&.all-events
+								color: $mw-black
+								border-bottom: 3px solid $mw-black
+								&:hover
+									background: $mw-black
+									color: $mw-white
+
 				.item
 					padding: 2px 0 0 2px
 					position: relative
 					margin: 0 0 20px 0
+					+transition( all, 0.8s, ease-in-out )
+					
 					&:last-child
 						float: left
 					&:hover
@@ -528,6 +590,7 @@ html
 							font: 2.3em $HELVBLCD
 							text-align: center
 							line-height: 1
+							text-transform: uppercase
 						p
 							font-family: $HELVLG
 							margin: 20px auto
