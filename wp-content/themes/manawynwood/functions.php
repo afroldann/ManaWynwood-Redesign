@@ -568,6 +568,7 @@ function add_thumbnail_sizes() {
 	add_image_size( 'rs-tmb', 605, 357, true );
 	add_image_size( 'rs-tmb-venues', 586, 311, true );
 	add_image_size( 'press-home', 206, 131, true );
+	add_image_size( 'detail', 1200, 660, true );
 
 	if (class_exists('MultiPostThumbnails')) {
 	    $builtin_types = array('post');

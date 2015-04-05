@@ -20,7 +20,7 @@
 			<section class="section slider-events large-12 columns">
 				<div class="title"><h4>EVENTS</h4></div>
 				<div class="owl-carousel slider-events large-12 columns" id="carousel-events">
-				<?php query_posts( 'post_type=sc_event' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
+				<?php query_posts( 'post_type=sc_event&posts_per_page=4' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
 			    	<div class="item">
 				  		<div class="large-7 columns container-image">
 				    		<?php if ( has_post_thumbnail() ) { the_post_thumbnail('rs-tmb'); } else {echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/broke-image.jpg" />'; }?>

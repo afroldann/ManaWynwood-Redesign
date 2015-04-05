@@ -280,7 +280,8 @@ html
 				.item
 					padding: 2px 0 0 2px
 					position: relative
-					margin: 0 0 20px 0
+					margin: 0 0 60px 0
+					min-height: 350px
 					+transition( all, 0.8s, ease-in-out )
 					
 					&:last-child
@@ -338,15 +339,13 @@ html
 							z-index: 2
 							+transition( all, 0.5s, ease )
 
-							&:before
+							span
 								content: ''
-								position: absolute
-								z-index: 1
 								font: 0.9em HELVLG
 								text-transform: capitalize
-								left: 0
-								top: 75px
 								width: 100%
+								display: block
+								padding-top: 5px
 						&:after
 							content: ""
 							position: absolute
@@ -360,8 +359,7 @@ html
 					&.up-comming
 						.content-item
 							h3
-								&:before
-									content: 'Up comming'
+								span
 									color: $mw-blue
 							.link
 								&:before
@@ -373,8 +371,7 @@ html
 					&.current
 						.content-item
 							h3
-								&:before
-									content: 'current'
+								span
 									color: $mw-red
 							.link
 								&:before
@@ -386,8 +383,7 @@ html
 					&.past
 						.content-item
 							h3
-								&:before
-									content: 'past'
+								span
 									color: $mw-gray-past
 							.link
 								&:before
@@ -629,6 +625,142 @@ html
 							padding-top: 50px
 							p
 								display: none
+		&.single
+			.post-image
+				margin-bottom: 70px
+			h1
+				font: 1.8em $HELVBLCD
+				line-height: 1
+				margin: 0 0 20px 0
+				text-transform: uppercase
+				color: $mw-gray
+			p
+				color: $mw-gray-past
+				font: 1em $HELVLG
+			
+			.twitter
+				ul
+					margin: 0
+					padding: 0
+					list-style: none
+					li
+						text-align: center
+						border: solid 1px $mw-gray-ultraLight
+						float: left
+						width: 32.33333%
+						padding: 10px 10px 40px 10px
+						position: relative
+						min-height: 210px
+						max-height: 210px
+						margin: 0.3%
+						.interact
+							a
+								font-size: 0.8em
+								text-indent: -9999px
+								display: inline-block
+								position: relative
+								padding: 0 9px
+								margin: 0 5px
+								&:after
+									position: absolute
+									width: 20px
+									height: 20px
+									left: 0
+									top: 0
+									color: $mw-black
+									z-index: 9
+									text-indent: 0
+									+border-radius(100%)
+									+transition( all, 0.2s, ease )
+									padding: 2px
+								&:hover
+									&:after
+										background: $mw-black
+										color: $mw-white
+
+								&.twitter_reply_icon
+									&:after
+										content: 'RP'
+								&.twitter_retweet_icon
+									&:after
+										content: 'RT'
+								&.twitter_fav_icon
+									&:after
+										content: 'FV'
+
+						.timePosted
+							position: absolute
+							top: 50%
+							text-align: right
+							width: 100%
+							left: 0
+							font-size: 0.8em
+							margin-top: -74px
+							padding-right: 10px
+						.tweet
+							margin: 25px 0 9px 0
+							font-size: 0.9em
+							width: 90%
+							display: inline-block
+
+						.user
+							text-align: left
+							img
+								width: auto
+								+border-radius(100%)
+								margin: 0 0 5px 0
+							span
+								width: 100%
+								font-size: 0.9em
+								display: inline
+								color: $mw-gray
+								&[data-scribe="element:screen_name"]
+									color: $mw-blue-tw
+									font-size: 0.8em
+						a
+							color: $mw-blue-tw
+						&:first-child
+							width: 65.16667%
+							padding: 108px 80px
+							min-height: 427px
+							max-height: 427px
+							.timePosted
+								position: absolute
+								top: 50%
+								text-align: center
+								width: 100%
+								left: 0
+								font-size: 0.8em
+								margin-top: -120px
+							.tweet
+								margin: 30px 0 0 0 
+								font-size: 1.4em
+							.user
+								text-align: center
+								img
+									width: auto
+									+border-radius(100%)
+									margin: 10px 0
+								span
+									display: block
+						img
+							width: 20px
+
+
+			.date-single
+				text-align: center
+				.event-date-only
+					border: solid 1px $mw-black
+					+border-radius(6px)
+					display: inline-block
+					padding: 5px 50px
+					font: 1.9em $HELVLG
+					color: black
+					
+				.sc_event_details
+					display: none
+				p
+					display: none
 		&.home
 			.carousel-home
 				margin-bottom: 30px

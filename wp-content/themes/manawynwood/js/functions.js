@@ -17,29 +17,35 @@
 			return false;
 		});
 	});
-	$('#filter a').on('click', function(){
-		$(this).css('outline','none');
-		$('ul#filter .current').removeClass('current');
-		$(this).parent().addClass('current');
 
-		var filterVal = $(this).text().toLowerCase().replace(' ','-');
-		
-		if(filterVal == 'all-events') {
-			$('.full-posts .item').addClass('fadeIn').fadeIn();
-			$('.full-posts .item').removeClass('fadeOut');
-			} else {
-				$('.full-posts .item').each(function() {
-				if(!$(this).hasClass(filterVal)) {
-					$(this).fadeOut('slow').removeClass('fadeIn');
-					$(this).addClass('fadeOut');
+	function filter() {
+	    
+
+		$('#filter a').on('click', function(){
+			$(this).css('outline','none');
+			$('ul#filter .current').removeClass('current');
+			$(this).parent().addClass('current');
+
+			var filterVal = $(this).text().toLowerCase().replace(' ','-');
+			
+			if(filterVal == 'all-events') {
+				$('.full-posts .item').addClass('fadeIn').fadeIn();
+				$('.full-posts .item').removeClass('fadeOut');
 				} else {
-					$(this).fadeIn().addClass('fadeIn');
-					$(this).removeClass('fadeOut');
-				}
-			});
-		}
-		return false;
-	});
+					$('.full-posts .item').each(function() {
+					if(!$(this).hasClass(filterVal)) {
+						$(this).fadeOut('slow').removeClass('fadeIn');
+						$(this).addClass('fadeOut');
+					} else {
+						$(this).fadeIn().addClass('fadeIn');
+						$(this).removeClass('fadeOut');
+					}
+				});
+			}
+			return false;
+		});
+	}
+	filter();
 
 	function animateElemScroll() {
   		_window.on('scroll', function(){
