@@ -8,6 +8,7 @@
 			</div>
 		</div>
 	</footer>
+
 	<div class="footer-bottom">
 		<div class="row">
 			<div class="large-4 columns">

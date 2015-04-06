@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="" role="main">
-
 			<?php /*the loop*/ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				
@@ -23,6 +22,41 @@
 				</div>
 			<?php endwhile; ?>
 		</div>
-		<?php get_sidebar('twitter_RT') ?>
+		
+		<div id="slider" class="slides owl-carousel large-12 columns">
+			<div class="item">
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail(); ?>
+			</div>
+		</div>
+		<div id="thumbnails" class="thumbnails owl-carousel large-12 columns">
+			<div class="item">
+				<?php the_post_thumbnail('gallery-thumb'); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail('gallery-thumb'); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail('gallery-thumb'); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail('gallery-thumb'); ?>
+			</div>
+			<div class="item">
+				<?php the_post_thumbnail('gallery-thumb'); ?>
+			</div>
+		</div>
+		<?php $twitter = get_sidebar('twitter_RT') ?>
 	</div>
 <?php get_footer(); ?>
