@@ -41,7 +41,7 @@ function sc_setup_post_types() {
 		'capability_type' 		=> apply_filters( 'sc_event_capability_type', 'post' ),
 		'hierarchical' 			=> false,
 		'menu_icon'				=> 'dashicons-calendar',
-		'supports' 				=> apply_filters( 'sc_event_supports', array( 'title', 'editor', 'thumbnail', 'excerpt' ) ),
+		'supports' 				=> apply_filters( 'sc_event_supports', array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ) ),
 	);
 	register_post_type('sc_event', $event_args);
 

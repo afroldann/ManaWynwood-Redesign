@@ -1,32 +1,12 @@
 <?php
-/**
- * The template for displaying Comments
- *
- * The area of the page that contains comments and the comment form.
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
-
-/*
- * If the current post is protected by a password and the visitor has not yet
- * entered the password we will return early without loading the comments.
- */
 if ( post_password_required() )
 	return;
 ?>
 
-<div id="comments" class="comments-area large-12 columns">
-
+<div id="comments" class="section comments-area large-12 columns">
+	<h4>Comment ...</h4>
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'twentythirteen' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h2>
-
+	
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(

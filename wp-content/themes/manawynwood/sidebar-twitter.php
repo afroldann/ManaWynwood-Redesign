@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 			"showInteraction": false
 		};
 		twitterFetcher.fetch(twtterFeed);
-
+		
 		function loadSlider(){
 			setTimeout(function(){
 				var _elTweets = $('.twitter-contents ul'); 

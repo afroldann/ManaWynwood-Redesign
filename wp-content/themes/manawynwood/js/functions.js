@@ -1,13 +1,93 @@
-/**
- * Functionality specific to Twenty Thirteen.
- *
- * Provides helper functions to enhance the theme experience.
- */
-
-( function( $ ) {
+jQuery(document).ready(function($){
 	var body    = $( 'body' ),
 	    _window = $( window );
 	var _header = $('.header');
+
+	whereami = location.pathname.substr(0,location.pathname.length - 1).substr(1).split('/');
+	if(whereami.length >= 2 || (whereami.length === 1 && (whereami[0] == 'fotoshow' || whereami[0] == 'sociales'))){
+		socialShares();
+	}
+	if(whereami.length >= 2 || (whereami.length === 1 && (whereami[0] == 'fotoshow' || whereami[0] == 'sociales'))){
+		window.setTimeout(function(){
+			jQuery('.buttonsPost').each(function(){
+				readsocialshares(jQuery(this));
+			});
+		},1000);
+	}
+	
+	function placeHolder(){
+		$('#commentform p input, #commentform p textarea').each( function(){
+			var name = $(this).prev('label').text();
+			$(this).prev('label').hide();
+			$(this).attr('placeholder', name);
+		});
+	}
+	placeHolder();
+
+	function socialShares(){
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=152685231434019";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	}
+	$('.buttons').on('click', function(){
+		var thetitle = $(this).attr('title');
+		var link = $(this).data('link');
+		popUp = window.open(link, thetitle,'status=0,toolbar=0,location=no,titlebar=0,resizable=disallow,menubar=0,height=320,width=455');
+		popUp.focus();
+		return false;
+	});
+	function readsocialshares($element){
+		var url = $element.data('url');
+		var $counter = $element.find('.dataNumber');
+		if(!$element.hasClass('gplusShare')){
+			$.ajaxSetup({
+			  dataType: "jsonp",
+			  global: true
+			});
+			if($element.hasClass('fbShare')){
+				jQuery.ajax({
+					url: 'https://graph.facebook.com/fql?q=SELECT%20share_count%20FROM%20link_stat%20WHERE%20url%20=%20%22'+url+'%22',
+					dataType: 'jsonp'
+				}).done(function(data) {
+					$counter.html(data.data[0]['share_count']);
+				});
+			} else if($element.hasClass('fbLike')){
+				jQuery.ajax({
+					url: 'https://graph.facebook.com/fql?q=SELECT%20like_count%20FROM%20link_stat%20WHERE%20url%20=%20%22'+url+'%22',
+					dataType: 'jsonp'
+				}).done(function(data) {
+					$counter.html(data.data[0]['like_count']);
+				});
+			} else if($element.hasClass('tw')){
+				jQuery.ajax({
+					url: 'http://cdn.api.twitter.com/1/urls/count.json?url='+url,
+					dataType: 'jsonp'
+				}).done(function(data) {
+					$counter.html(data.count);
+				});
+			} else if($element.hasClass('pinterest')){
+				jQuery.ajax({
+					url: 'http://api.pinterest.com/v1/urls/count.json?url='+url+'&format=json',
+					dataType: 'jsonp'
+				}).done(function(data) {
+					$counter.html(data.count);
+				});
+			}
+		}
+	}
+
+	whereami = location.pathname.substr(0,location.pathname.length - 1).substr(1).split('/');
+	if(whereami.length >= 2 || (whereami.length === 1 && (whereami[0] == 'fotoshow' || whereami[0] == 'sociales'))){
+		window.setTimeout(function(){
+			jQuery('.buttonsPost').each(function(){
+				readsocialshares(jQuery(this));
+			});
+		},1000);
+	}
 
 	$(function(){
 		var socialToggle = $('a[title="share"]');
@@ -17,56 +97,61 @@
 			return false;
 		});
 	});
+	
+	function sliderGallery (){
+		var sync1 = $("#slider");
+		var sync2 = $("#thumbnails");
+		var flag = false;
 
-	var sync1 = $("#slider");
-	var sync2 = $("#thumbnails");
-	var flag = false;
+		setTimeout(function(){
+			$('.owl-stage-outer').on('click', function(){
+				$('.slides.owl-loaded').fadeOut();
+				$('html').removeClass('active');
+			});
+		},1000);
 
-	setTimeout(function(){
-		$('.owl-stage-outer').on('click', function(){
-			$('.slides.owl-loaded').fadeOut();
-		});
-	},1000);
-
-	var slides = sync1.owlCarousel({
-		margin: 0,
-		items: 1,
-		nav: true,
-		dots: true,
-		mouseDrag: false,
-		loop: true,
-		center: true,
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn'
-	}).on('change.owl.carousel', function(e) {
-		if (e.namespace && e.property.name === 'position' && !flag) {
-			flag = true;	
-			//thumbs.to(e.relatedTarget.relative(e.property.value), 300, true);
-			flag = false;
-		}
-	}).data('owl.carousel');
-	var thumbs = sync2.owlCarousel({
-		items: 5,
-		nav: true,
-		dots: false,
-		loop: false,
-		margin: 35,
-		lazyLoad: true,
-		lazyContent: true,
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn',
-		freeDrag: true
-
-	}).on('click', '.item', function(e) {
-		e.preventDefault();
-
-		$('.slides.owl-loaded').fadeIn();
-		
-		sync1.trigger('to.owl.carousel', [$(e.target).parents('.owl-item').index(), 300, true]);
-	}).on('change.owl.carousel', function(e) {
+		var slides = sync1.owlCarousel({
+			margin: 0,
+			items: 1,
+			nav: true,
+			dots: true,
+			mouseDrag: false,
+			loop: true,
+			center: true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn'
+		}).on('change.owl.carousel', function(e) {
 			if (e.namespace && e.property.name === 'position' && !flag) {
+				flag = true;	
+				//thumbs.to(e.relatedTarget.relative(e.property.value), 300, true);
+				flag = false;
+			}
+		}).data('owl.carousel');
+		var thumbs = sync2.owlCarousel({
+			items: 5,
+			nav: true,
+			dots: false,
+			loop: false,
+			margin: 35,
+			lazyLoad: true,
+			lazyContent: true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			freeDrag: true 
+
+		}).on('click', '.item', function(e) {
+			e.preventDefault();
+
+			$('.slides.owl-loaded').fadeIn();
+			$('html').addClass('active');
+
+			sync1.trigger('to.owl.carousel', [$(e.target).parents('.owl-item').index(), 300, true]);
+		}).on('change.owl.carousel', function(e) {
+				if (e.namespace && e.property.name === 'position' && !flag) {
+		}
+		}).data('owl.carousel');
 	}
-	}).data('owl.carousel');
+	sliderGallery();
 
 	function filter() {
 		$('#filter a').on('click', function(){
@@ -113,7 +198,6 @@
 
 	function scrollMenu(){
 		windowOffset = _window.scrollTop();
-		
 		if( windowOffset >= 124 ){
 			_header.addClass('scrolled animated fadeInDown	');
 		}else {
@@ -198,96 +282,6 @@
 		// }
 	}
 	openMap();
-	/**
-	 * Adds a top margin to the footer if the sidebar widget area is higher
-	 * than the rest of the page, to help the footer always visually clear
-	 * the sidebar.
-	 */
-	$( function() {
-		if ( body.is( '.sidebar' ) ) {
-			var sidebar   = $( '#secondary .widget-area' ),
-			    secondary = ( 0 === sidebar.length ) ? -40 : sidebar.height(),
-			    margin    = $( '#tertiary .widget-area' ).height() - $( '#content' ).height() - secondary;
+	
 
-			if ( margin > 0 && _window.innerWidth() > 999 ) {
-				$( '#colophon' ).css( 'margin-top', margin + 'px' );
-			}
-		}
-	} );
-
-	/**
-	 * Enables menu toggle for small screens.
-	 */
-	( function() {
-		var nav = $( '#site-navigation' ), button, menu;
-		if ( ! nav ) {
-			return;
-		}
-
-		button = nav.find( '.menu-toggle' );
-		if ( ! button ) {
-			return;
-		}
-
-		// Hide button if menu is missing or empty.
-		menu = nav.find( '.nav-menu' );
-		if ( ! menu || ! menu.children().length ) {
-			button.hide();
-			return;
-		}
-
-		button.on( 'click.twentythirteen', function() {
-			nav.toggleClass( 'toggled-on' );
-		} );
-
-		// Fix sub-menus for touch devices.
-		if ( 'ontouchstart' in window ) {
-			menu.find( '.menu-item-has-children > a' ).on( 'touchstart.twentythirteen', function( e ) {
-				var el = $( this ).parent( 'li' );
-
-				if ( ! el.hasClass( 'focus' ) ) {
-					e.preventDefault();
-					el.toggleClass( 'focus' );
-					el.siblings( '.focus' ).removeClass( 'focus' );
-				}
-			} );
-		}
-
-		// Better focus for hidden submenu items for accessibility.
-		menu.find( 'a' ).on( 'focus.twentythirteen blur.twentythirteen', function() {
-			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
-		} );
-	} )();
-
-	/**
-	 * Makes "skip to content" link work correctly in IE9 and Chrome for better
-	 * accessibility.
-	 *
-	 * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
-	 */
-	_window.on( 'hashchange.twentythirteen', function() {
-		var element = document.getElementById( location.hash.substring( 1 ) );
-
-		if ( element ) {
-			if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) {
-				element.tabIndex = -1;
-			}
-
-			element.focus();
-		}
-	} );
-
-	/**
-	 * Arranges footer widgets vertically.
-	 */
-	if ( $.isFunction( $.fn.masonry ) ) {
-		var columnWidth = body.is( '.sidebar' ) ? 228 : 245;
-
-		$( '#secondary .widget-area' ).masonry( {
-			itemSelector: '.widget',
-			columnWidth: columnWidth,
-			gutterWidth: 20,
-			isRTL: body.is( '.rtl' )
-		} );
-	}
-} )( jQuery );
+});

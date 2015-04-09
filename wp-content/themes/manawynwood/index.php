@@ -59,7 +59,7 @@
 			<section class="section press-home large-12 columns">
 				<div class="title"><h4>Press</h4></div>
 				<div class="press-list large-12 columns" id="press-items">
-				<?php query_posts( 'post_type=press&posts_per_page=4' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
+				<?php query_posts( 'post_type=post&posts_per_page=4' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
 			    	<div class="item large-3 columns">
 			    		<div class="container-item">
 					  		<div class="large-12 columns container-image">

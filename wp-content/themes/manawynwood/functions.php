@@ -603,3 +603,52 @@ function word_count($string, $limit) {
 	$words = explode(' ', $string);
 	return implode(' ', array_slice($words, 0, $limit)); 
 }
+
+
+/**
+ * 
+ * Display social networks share buttons when applicable
+ */
+//plus
+function shinra_gplus_count( $url ) {
+	/* get source for custom +1 button */
+	$contents = file_get_contents( 'https://plusone.google.com/_/+1/fastbutton?url=' .  $url );
+
+	/* pull out count variable with regex */
+	preg_match( '/window\.__SSR = {c: ([\d]+)/', $contents, $matches );
+
+	/* if matched, return count, else zed */
+	if( isset( $matches[0] ) )
+	return (int) str_replace( 'window.__SSR = {c: ', '', $matches[0] );
+	return 0;
+}
+
+function manaShare($url = null, $image = null) {
+	if(empty($url)){	
+	$url= "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	}
+	
+	$plusCounter = shinra_gplus_count(urlencode($url));
+	?>
+	<div id="social-buttons-share" class="sharePost">
+
+         <span class="buttonsPost twitterPost tw" data-url="<?php echo urlencode($url); ?>">
+            <div class="fakeButton">
+                <a class="buttons" href="#" data-link="http://twitter.com/intent/tweet?original_referer=<?php echo urlencode("http://".$_SERVER['HTTP_HOST'].'/');?>&text=<?php urlencode(wp_title('')); echo '%20';?>&tw_p=tweetbutton&url=<?php echo urlencode($url); ?>&via=twitter&hashtags=AlejandraQuinteroSinisterra" title="<?php wp_title(''); ?>">
+                	Twittear
+                </a>
+            </div>
+            <span class="dataNumber">0</span>
+        </span><!--//-->
+    	<span class="buttonsPost facebookPost fbShare" data-url="<?php echo urlencode($url); ?>">
+	        <div class="fakeButton">
+	            <a class="buttons" href="#" data-link="http://facebook.com/share.php?u=<?php echo urlencode($url); ?>">
+	              Share on Facebook
+	            </a>
+	        </div>
+	        <span class="dataNumber">0</span>
+        </span><!--//-->
+
+	</div>
+	<?php 
+}
