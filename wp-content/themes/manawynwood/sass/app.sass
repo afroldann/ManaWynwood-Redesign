@@ -39,30 +39,46 @@ html
 		&.single
 			&.single-post
 				.pagination
+					position: absolute
+					bottom: 40px
+					a
+						font: 1em $HELVBLCD
+						color: $mw-gray-light
+						line-height: 1
+						display: block
+						+transition(all, 0.2s, ease)
+						&:hover
+							color: $mw-black
 					.prev
 						text-align: left
-						a
-							font: 1.2em $HELVBLCD
-							color: $mw-black
-						span
-							&:before
-								content: '‹'
-								font-family: Apple Symbols
-								padding: 0 5px
-								position: relative
-								font-size: 1.5em
+						position: relative
+						&:before
+							width: 100%
+							display: block
+							content: '‹ prev'
+							font-family: $HELVBLCD, Apple Symbols
+							position: relative
+							font-size: 1em
+							color: $mw-gray-light
+							padding-bottom: 10px
+						&:after
+							content: ''
+							position: absolute
+							right: 0
+							bottom: 0
+							height: 80%
+							border-left: 1px solid $mw-gray-light
 					.next
 						text-align: right
-						a
-							font: 1.2em $HELVBLCD
-							color: $mw-black
-						span
-							&:after
-								content: '›'
-								font-family: Apple Symbols
-								padding: 0 5px
-								position: relative
-								font-size: 1.5em
+						&:before
+							width: 100%
+							display: block
+							content: 'next ›'
+							font-family: $HELVBLCD, Apple Symbols
+							position: relative
+							font-size: 1em
+							color: $mw-gray-light
+							padding-bottom: 10px
 					span
 						font: 1.2em $HELVBLCD
 						color: $mw-gray-past
