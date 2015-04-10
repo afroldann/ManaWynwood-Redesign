@@ -10,7 +10,7 @@
 				<div class="large-12 columns">
 					<h1><?php the_title(); ?></h1>
 					<div>
-						<p><?php echo get_the_content(); ?></p>
+						<p><?php the_content(); ?></p>
 					</div>
 				</div>
 				<div class="large-12 columns date-single">
@@ -25,7 +25,7 @@
 		            <?php $prevPost = get_previous_post(true);
 						if($prevPost) {?>
 						<div class="nav-box prev large-6 columns" style="float:left;">
-			                <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );}?>
+			                <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(127,77) );}?>
 			                <div class="large-6 columns" style="padding-right: 5px">
 			                	<?php previous_post_link('%link',"$prevthumbnail", TRUE); ?>
 			                </div>
@@ -37,7 +37,7 @@
 		            <?php $nextPost = get_next_post(true);
 						if($nextPost) { ?>
 		            <div class="nav-box next large-6 columns" style="float:right;">
-						<?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) ); } ?>
+						<?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(127,77) ); } ?>
 						<div class="large-6 columns">
 		                	<?php next_post_link('%link',"%title", TRUE); ?>
 		                </div>

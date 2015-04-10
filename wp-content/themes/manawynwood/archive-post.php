@@ -35,8 +35,16 @@
 
 		</div><!-- #content -->
 
-		<?php get_sidebar('instagram') ?>			
-		<?php get_sidebar('twitter') ?>
+		<section class="section instagram-feed large-12 columns">
+			<input id="insUser" type="hidden" value="<?php echo of_get_option('instauser'); ?>">
+			<input id="insToken" type="hidden" value="<?php echo of_get_option('insttoken'); ?>">
+			<div id="instafeed" class="instagram"></div>
+		</section>			
+
+		<section class="section twitter large-12 columns">
+			<input id="twitterIDInput" type="hidden" value="<?php echo of_get_option('twitterid'); ?>">
+			<div class="title-twitter large-2 columns">twitter</div>
+			<div id="twitter-feed" class="twitter-contents large-10 columns"></div>
 		</section>
 	</div><!-- #primary -->
 
