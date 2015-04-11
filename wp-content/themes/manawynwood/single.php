@@ -23,9 +23,32 @@
 				</div>
 			<?php endwhile; ?>
 		</div>
-		
+
+        <div style=" clear: both;">
+		<?php 
+		$posts = get_field('venues');
+
+		if( $posts ): ?>
+		    <ul>
+		    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+		        <?php setup_postdata($post); ?>
+		        <li>
+		            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		             <?php the_post_thumbnail(); ?>
+		        </li>
+		    <?php endforeach; ?>
+		    </ul>
+		    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		<?php endif; ?>
+		</div>
+
 		<div class="container-gallery section large-12 columns">
 			<h2><?php the_title(); ?> <span>Gallery</span></h2>
+				<?php
+				    foreach (get_field ('ng_gallery') as $nextgen_gallery_id) :
+				        echo nggShowGallery( $nextgen_gallery_id );
+				    endforeach;
+				?>
 			<div id="slider" class="slides owl-carousel large-12 columns">
 				<div class="item">
 					<?php the_post_thumbnail(); ?>
