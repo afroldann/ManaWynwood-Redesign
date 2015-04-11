@@ -35,7 +35,24 @@ html
 		.section
 			+opacity(0)
 			+transition( opacity, 0.2s, ease-in-out )
-		
+		.breadCrumb
+			font: 1em $HELVLG
+			color: $mw-gray-regular
+			border-bottom: 1px solid $mw-gray-ultraLight
+			margin-bottom: 20px
+			padding-bottom: 20px
+			a
+				color: $mw-gray-regular
+		.venue
+			h2
+				font: 2em $HELVBLCD
+				text-transform: uppercase
+			.content-decs
+				padding: 25px
+				p
+					font: 1em $HELVLT
+					line-height: 1.4
+
 		.custom-pagination
 			text-align: center
 			padding: 40px 0
@@ -102,7 +119,7 @@ html
 						color: $mw-gray-past
 					p
 						font: 1.1em $HELVLG
-						color: $mw-black-text
+						color: $mw-gray-soft
 						line-height: 1.4em
 					.image-container
 						padding-right: 15px
@@ -193,7 +210,7 @@ html
 					padding-right: 20px
 					.post-image
 						img
-							width: 100%
+							width: auto
 					.date-single
 						border: none
 						.sharePost
@@ -586,7 +603,6 @@ html
 									-ms-filter: grayscale(100%)
 									-o-filter: grayscale(100%)
 									filter: grayscale(100%)
-									filter: url(../images/grayscale.svg)
 									filter: gray
 
 					.container-image
@@ -691,7 +707,6 @@ html
 								-ms-filter: grayscale(100%)
 								-o-filter: grayscale(100%)
 								filter: grayscale(100%)
-								filter: url(../images/grayscale.svg)
 								filter: gray
 
 						&:before

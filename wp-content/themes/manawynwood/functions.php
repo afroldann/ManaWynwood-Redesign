@@ -174,6 +174,7 @@ function twentythirteen_scripts_styles() {
 	wp_enqueue_script( 'nicescroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array( 'jquery' ), '2014-06-08', true );
 	wp_enqueue_script( 'instagram-feed', get_template_directory_uri() . '/js/instafeed.min.js', array( 'jquery' ), '2014-06-08', true );
 	wp_enqueue_script( 'twitter-feed', get_template_directory_uri() . '/js/twitter-feed.min.js', array( 'jquery' ), '2014-06-08', true );
+	wp_enqueue_script( 'zoomImage', get_template_directory_uri() . '/js/jquery.zoom.min.js', array( 'jquery' ), '2014-06-08', true );
 	wp_enqueue_script( 'twentythirteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
 
 	// Loads app styles
@@ -571,6 +572,7 @@ function add_thumbnail_sizes() {
 	add_image_size( 'press-list', 456, 274, true );
 	add_image_size( 'detail', 1200, 660, true );
 	add_image_size( 'gallery-thumb', 166, 166, true );
+	add_image_size( 'floor-plan', 939, 670, true );
 
 	if (class_exists('MultiPostThumbnails')) {
 	    $builtin_types = array('post');
@@ -610,7 +612,7 @@ function word_count($string, $limit) {
  * 
  * Display social networks share buttons when applicable
  */
-//plus
+
 function shinra_gplus_count( $url ) {
 	/* get source for custom +1 button */
 	$contents = file_get_contents( 'https://plusone.google.com/_/+1/fastbutton?url=' .  $url );
@@ -654,20 +656,18 @@ function manaShare($url = null, $image = null) {
 	<?php 
 }
 
+/*
+*
+*
+the pagination
+*/
+
 
 function custom_pagination($numpages = '', $pagerange = '', $paged='') {
   if (empty($pagerange)) {
     $pagerange = 2;
   }
-  /**
-   * This first part of our function is a fallback
-   * for custom pagination inside a regular loop that
-   * uses the global $paged and global $wp_query variables.
-   * 
-   * It's good because we can now override default pagination
-   * in our theme, and use this function in default quries
-   * and custom queries.
-   */
+
   global $paged;
   if (empty($paged)) {
     $paged = 1;
@@ -688,7 +688,7 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
     'format'          => 'page/%#%',
     'total'           => $numpages,
     'current'         => $paged,
-    'show_all'        => False,
+    'show_all'        => false,
     'end_size'        => 1,
     'mid_size'        => $pagerange,
     'prev_next'       => True,
@@ -707,4 +707,29 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
     	echo "</div>";
     echo "</nav>";
   }
+}
+
+/*
+*
+*
+the breadcrumb
+*/
+
+function the_breadcrumb() {
+	if (!is_home()) {
+		echo '<span class="removed_link" title="&#039;;
+		echo get_option(&#039;home&#039;);
+	        echo &#039;">';
+		bloginfo('name');
+		echo "</span> » ";
+		if (is_category() || is_single()) {
+			the_category('title_li=');
+			if (is_single()) {
+				echo " » ";
+				the_title();
+			}
+		} elseif (is_page()) {
+			echo the_title();
+		}
+	}
 }

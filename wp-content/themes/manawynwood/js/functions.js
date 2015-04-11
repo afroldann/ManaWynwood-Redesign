@@ -198,7 +198,7 @@ jQuery(document).ready(function($){
 
 	function scrollMenu(){
 		windowOffset = _window.scrollTop();
-		if( windowOffset >= 124 ){
+		if( windowOffset >= 140 ){
 			_header.addClass('scrolled animated fadeInDown	');
 		}else {
 			_header.removeClass('scrolled animated fadeInDown	');
@@ -206,12 +206,12 @@ jQuery(document).ready(function($){
 		_window.on('scroll', function(){
 			windowOffset = _window.scrollTop();
 			if( windowOffset >= 150 ){
+				$('#main').css('margin-top', '140px');
 				_header.addClass('scrolled animated fadeInDown');
-				$('#main').css('padding-top', 70)
 
 			}else {
+				$('#main').css('margin-top', '0');
 				_header.removeClass('scrolled animated fadeInDown');
-				$('#main').css('padding-top', 0)
 			}
 		});
 	}

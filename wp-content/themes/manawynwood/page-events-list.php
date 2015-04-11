@@ -86,6 +86,45 @@
 				<?php endwhile; endif; wp_reset_query(); ?> 
 			</div>
 		</div>
+		
+		<div class="container-gallery section large-12 columns">
+			<h2><?php the_title(); ?> <span>Gallery</span></h2>
+			<div id="slider" class="slides owl-carousel large-12 columns">
+				<div class="item">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail(); ?>
+				</div>
+			</div>
+			<div id="thumbnails" class="thumbnails owl-carousel large-12 columns">
+				<div class="item">
+					<?php the_post_thumbnail('gallery-thumb'); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail('gallery-thumb'); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail('gallery-thumb'); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail('gallery-thumb'); ?>
+				</div>
+				<div class="item">
+					<?php the_post_thumbnail('gallery-thumb'); ?>
+				</div>
+			</div>
+		</div>
+
 		<?php get_sidebar('instagram') ?>			
 		<?php get_sidebar('twitter') ?>
 	</div>

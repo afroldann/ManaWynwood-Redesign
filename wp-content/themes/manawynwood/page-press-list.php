@@ -6,6 +6,9 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<div class="news-group">
 							<div class="item-list large-12 columns">
+								<div class="large-12 columns breadCrumb">
+									<?php the_breadcrumb(); ?>
+								</div>
 								<?php
 									$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 									$query_args = array(

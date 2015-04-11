@@ -3,49 +3,98 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<!--<h1 class="archive-title"><?php
-					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'twentythirteen' ), get_the_date() );
-					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'twentythirteen' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'twentythirteen' ) ) );
-					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'twentythirteen' ), get_the_date( _x( 'Y', 'yearly archives date format', 'twentythirteen' ) ) );
-					else :
-						_e( 'Archives', 'twentythirteen' );
-					endif;
-				?></h1>-->	
-			</header><!-- .archive-header -->
+			<section class="venue section un-conventional-center">
+				<?php 
+					$page_id 					= 139;
+					$meta_value_image 			= get_post_meta($page_id, 'wpcf-image-plane', array('output'=>'') );
+					$meta_value_video 			= get_post_meta($page_id, 'wpcf-media-video', array('output'=>'') );
+					$meta_second_video 			= get_post_meta($page_id, 'wpcf-second-video', array('output'=>'') );
+					$post_page 					= get_page($page_id);
+				?>
 
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-			
-				<article class="section">
-					<?php the_content() ?>
-					<?php the_post_thumbnail() ?>
-				</article>
-			<?php endwhile; ?>
+				<div class="large-12 columns">
+					<h2><?php echo $post_page->post_title  ?></h2>
+				</div>
+				
+				<div class="large-6 columns">
+					<iframe src="<?php echo $meta_value_video ?>" 
+						width="100%" 
+						height="350" 
+						frameborder="0" 
+						webkitallowfullscreen mozallowfullscreen allowfullscreen>
+					</iframe>
+				</div>
+				
+				<div class="large-6 columns content-decs">
+					<?php echo apply_filters('the_content', $post_page->post_content); ?>
+				</div>
+				
+				<div class="large-12 columns">
+					<div class="large-12 columns container-plan">
+						<?php echo get_the_post_thumbnail( $page_id ); ?>
+					</div>
+					<script type="text/javascript">
+						jQuery(document).ready(function($){
+							$('.container-plan').zoom({ 
+								on: 'click',
+								magnify: 1.5 
+							});	
+						});
+					</script>
 
-			<?php twentythirteen_paging_nav(); ?>
+					<div class="large-3 columns plan-video">
+						<iframe src="<?php echo $meta_second_video ?>" 
+							width="100%" 
+							height="350" 
+							frameborder="0" 
+							webkitallowfullscreen mozallowfullscreen allowfullscreen>
+						</iframe>
+					</div>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+				</div>
+
+				<div class="container-gallery section large-12 columns">
+					<h2><?php echo $post_page->post_title; ?> <span>Gallery</span></h2>
+					<div id="slider" class="slides owl-carousel large-12 columns">
+						<div class="item">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail(); ?>
+						</div>
+					</div>
+					<div id="thumbnails" class="thumbnails owl-carousel large-12 columns">
+						<div class="item">
+							<?php the_post_thumbnail('gallery-thumb'); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail('gallery-thumb'); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail('gallery-thumb'); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail('gallery-thumb'); ?>
+						</div>
+						<div class="item">
+							<?php the_post_thumbnail('gallery-thumb'); ?>
+						</div>
+					</div>
+				</div>
+			</section>
 
 		</div><!-- #content -->
 
-		<section class="section instagram-feed large-12 columns">
-			<input id="insUser" type="hidden" value="<?php echo of_get_option('instauser'); ?>">
-			<input id="insToken" type="hidden" value="<?php echo of_get_option('insttoken'); ?>">
-			<div id="instafeed" class="instagram"></div>
-		</section>			
-
-		<section class="section twitter large-12 columns">
-			<input id="twitterIDInput" type="hidden" value="<?php echo of_get_option('twitterid'); ?>">
-			<div class="title-twitter large-2 columns">twitter</div>
-			<div id="twitter-feed" class="twitter-contents large-10 columns"></div>
-		</section>
+		
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

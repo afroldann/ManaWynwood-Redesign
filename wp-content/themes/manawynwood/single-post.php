@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 	<div id="primary" class="content-area">
+		<div class="large-12 columns breadCrumb">
+			<?php the_breadcrumb(); ?>
+		</div>
 		<div id="content" class="large-9 columns container-post" role="main">
 			<?php /*the loop*/ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
