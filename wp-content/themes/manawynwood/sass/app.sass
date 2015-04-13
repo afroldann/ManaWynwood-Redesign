@@ -43,15 +43,61 @@ html
 			padding-bottom: 20px
 			a
 				color: $mw-gray-regular
-		.venue
-			h2
-				font: 2em $HELVBLCD
-				text-transform: uppercase
-			.content-decs
-				padding: 25px
-				p
-					font: 1em $HELVLT
-					line-height: 1.4
+
+		&.post-type-archive-venues
+			.venue
+				margin-bottom: 30px
+				h2
+					font: 2.5em $HELVBLCD
+					text-transform: uppercase
+				h3
+					font: 1.2em $HELVLG
+					text-transform: uppercase
+					color: $mw-gray-past
+					span
+						color: $mw-red
+				
+				.container-plan
+					margin: 40px 0
+					max-height: 300px
+					border: 5px solid $mw-gray-light
+				.plan-video
+					a
+						background: $mw-black
+						width: 90%
+						height: 160px
+						display: block
+						position: relative
+						z-index: 1
+						top: -120px
+						text-indent: -9999px
+						+border-radius(2px)
+						box-shadow: 0px 0px 15px 2px $mw-gray-light
+						&:hover
+							&:after
+								color: $mw-red
+						&:after
+							+transition(all, 0.3s, ease)
+							content: '▸'
+							color: $mw-white
+							position: absolute
+							left: 50%
+							top: 50%
+							width: 20px
+							height: 20px
+							text-indent: 0
+							font-size: 3.2em
+							line-height: 0
+							margin-left: -10px
+							margin-top: -5px
+
+				.content-decs
+					padding: 25px
+					height: 325px
+					overflow: hidden
+					p
+						font: 1em $HELVLT
+						line-height: 1.4
 
 		.custom-pagination
 			text-align: center
@@ -126,7 +172,7 @@ html
 						img
 							width: 100%
 		&.single
-			&.single-post
+			&.single-press
 				p
 					margin: 15px 0
 				.pagination
@@ -1039,54 +1085,72 @@ html
 					padding: 5px 50px
 					font: 1.9em $HELVLG
 					color: black
-				.sharePost
-					text-align: center
-					margin-top: 20px
-					.buttonsPost
-						width: 50px
-						display: inline-block
-						.fakeButton
-							-webkit-filter: grayscale(100%)
-							-moz-filter: grayscale(100%)
-							-o-filter: grayscale(100%)
-							filter: grayscale(100%)
-							+transition(all, 0.2s, ease)
-							&:hover
-								-webkit-filter: grayscale(0)
-								-moz-filter: grayscale(0)
-								-o-filter: grayscale(0)
-								filter: grayscale(0)
-							a
-								text-indent: -9999px
-								float: left
-								width: 100%
-								height: 100%
-						.dataNumber
-							float: left
-							width: 100%
-						&.fbShare
-							&:hover
-								.dataNumber
-									color: $mw-blue
-							.dataNumber
-								font: 0.9em $HELVLG
-							.fakeButton
-								background: url(../images/facebook.svg) no-repeat center top
-								padding: 20px
-						&.tw
-							&:hover
-								.dataNumber
-									color: $mw-blue
-							.dataNumber
-								font: 0.9em $HELVLG
-							.fakeButton
-								background: url(../images/twitter.svg) no-repeat center top
-								padding: 20px
 
 				.sc_event_details
 					display: none
 				p
 					display: none
+			.venue
+				background: $mw-blue-tw
+				text-align: center
+				MARGIN: 40px 0
+				.info
+					padding: 50px
+					background: url(../images/pin.svg) no-repeat center 300px
+					height: 400px
+					display: block
+					h4
+						font: 1.9em $HELVBLCD
+						color: $mw-white
+					p
+						color: $mw-white
+						font: 1.1em $HELVLG
+						margin: 0
+						padding: 0 40px
+
+		.sharePost
+			text-align: center
+			margin-top: 20px
+			.buttonsPost
+				width: 50px
+				display: inline-block
+				.fakeButton
+					-webkit-filter: grayscale(100%)
+					-moz-filter: grayscale(100%)
+					-o-filter: grayscale(100%)
+					filter: grayscale(100%)
+					+transition(all, 0.2s, ease)
+					&:hover
+						-webkit-filter: grayscale(0)
+						-moz-filter: grayscale(0)
+						-o-filter: grayscale(0)
+						filter: grayscale(0)
+					a
+						text-indent: -9999px
+						float: left
+						width: 100%
+						height: 100%
+				.dataNumber
+					float: left
+					width: 100%
+				&.fbShare
+					&:hover
+						.dataNumber
+							color: $mw-blue
+					.dataNumber
+						font: 0.9em $HELVLG
+					.fakeButton
+						background: url(../images/facebook.svg) no-repeat center top
+						padding: 20px
+				&.tw
+					&:hover
+						.dataNumber
+							color: $mw-blue
+					.dataNumber
+						font: 0.9em $HELVLG
+					.fakeButton
+						background: url(../images/twitter.svg) no-repeat center top
+						padding: 20px
 		&.home
 			.carousel-home
 				margin-bottom: 30px

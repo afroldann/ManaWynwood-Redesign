@@ -164,7 +164,7 @@ jQuery(document).ready(function($){
 	}
 	scrollMenu();
 
-	//$('html').niceScroll();
+	$('html').niceScroll();
 
 	$('#carousel-venues').owlCarousel({
 		animateOut: 'fadeOut',
