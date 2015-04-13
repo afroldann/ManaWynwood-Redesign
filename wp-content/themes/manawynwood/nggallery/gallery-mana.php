@@ -37,51 +37,52 @@ Follow variables are useable :
     <?php $i++; ?>
 
  	<?php endforeach; ?>
- 	<script type="text/javascript">
- 		jQuery(document).ready(function($){
- 			jQuery(function($) {
-			    var nextgen_fancybox_init = function() {
-			    		var selector = nextgen_lightbox_filter_selector($, $(".ngg-fancybox"));
-			    		
-			        selector.fancybox({
-			                'width'             : '70%',
-			                'height'            : '70%',
-			                'autoDimensions'    : false,
-			                'transitionIn'      : 'elastic',
-			                'transitionOut'     : 'fade',
-			                'centerOnScroll'    : true,
-			                'overlayOpacity'    : 1,
-			                'padding'           : 0,
-			                'margin'            : 0,
-			                'overlayColor'      : '#000',
-			            onComplete: function() {
-			                $('#fancybox-wrap').css('z-index', 10000);
-			            }
-			        });
-			    };
-			    $(this).bind('refreshed', nextgen_fancybox_init);
-			    nextgen_fancybox_init();
-			});
-
- 			function sliderGallery (){
-				var slideThumbs = $("#<?php echo $gallery->anchor ?>");
-				slideThumbs.owlCarousel({
-					items: 5,
-					nav: true,
-					dots: false,
-					loop: false,
-					margin: 35,
-					lazyLoad: true,
-					lazyContent: true,
-					animateOut: 'fadeOut',
-					animateIn: 'fadeIn',
-					freeDrag: true 
-
-				});
-			}
-			sliderGallery();
- 		})
- 	</script>
 	</div>
 
-<?php endif; ?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			jQuery(function($) {
+		    var nextgen_fancybox_init = function() {
+		    		var selector = nextgen_lightbox_filter_selector($, $(".ngg-fancybox"));
+		    		
+		        selector.fancybox({
+		                'width'             : '70%',
+		                'height'            : '70%',
+		                'autoDimensions'    : false,
+		                'transitionIn'      : 'elastic',
+		                'transitionOut'     : 'elastic',
+		                'centerOnScroll'    : true,
+		                'overlayOpacity'    : 1,
+		                'padding'           : 0,
+		                'margin'            : 0,
+		                'overlayColor'      : '#000',
+		            onComplete: function() {
+		                $('#fancybox-wrap').css('z-index', 10000);
+		            }
+		        });
+		    };
+		    $(this).bind('refreshed', nextgen_fancybox_init);
+		    nextgen_fancybox_init();
+		});
+
+			function sliderGallery (){
+			var slideThumbs = $("#<?php echo $gallery->anchor ?>");
+			slideThumbs.owlCarousel({
+				items: 5,
+				nav: true,
+				dots: false,
+				loop: true,
+				margin: 35,
+				lazyLoad: true,
+				lazyContent: true,
+				animateOut: 'fadeOut',
+				animateIn: 'fadeIn',
+				freeDrag: false
+			});
+		}
+		sliderGallery();
+		})
+	</script>
+<?php endif; 
+	wp_reset_query();
+?>

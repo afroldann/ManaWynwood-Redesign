@@ -3,7 +3,7 @@
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<section class="venue un-conventional-center">
+			<section class="venue large-12 columns un-conventional-center">
 				<?php
 					$query_args = array(
 						'post_type' => 'venues',
@@ -49,7 +49,7 @@
 				<?php endif; ?>
 		</div>
 
-		<section class="venue rc-cola-factory">
+		<section class="large-12 columns venue rc-cola-factory">
 				<?php
 					$query_args = array(
 						'post_type' => 'venues',
