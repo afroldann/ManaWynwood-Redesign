@@ -16,11 +16,9 @@
 						<p><?php the_content(); ?></p>
 					</div>
 				</div>
-				<div class="large-12 columns date-single">
-					<?php manaShare(null); ?>
-				</div>
 			<?php endwhile; ?>
 		</div>
+
 		<div class="large-3 columns sidebar">
 			<?php get_sidebar('main') ?>
 			<div class="large-12 columns pagination">

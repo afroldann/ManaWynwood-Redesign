@@ -1,7 +1,5 @@
-<?php $metaTwitter = get_post_meta($post->ID, "wpcf-single-twitter", true) ?> 
-
 <section class="twitter large-12 columns">
-	<input id="twitterIDSingle" type="hidden" value="<?php echo $metaTwitter ?>">
+	<input id="twitterIDSingle" type="hidden" value="<?php the_field('twitter'); ?>">
 	<h4>What the people say...</h4>
 	<div id="twitter-feed" class="twitter-contents large-12 columns"></div>
 </section>
