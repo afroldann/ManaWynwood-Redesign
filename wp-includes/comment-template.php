@@ -2238,7 +2238,8 @@ function comment_form( $args = array(), $post_id = null ) {
 			 */
 			do_action( 'comment_form_before' );
 			?>
-			<div id="respond" class="comment-respond large-12 columns">
+			<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></h3>
 				<?php if ( get_option( 'comment_registration' ) && !is_user_logged_in() ) : ?>
 					<?php echo $args['must_log_in']; ?>
 					<?php
@@ -2250,7 +2251,7 @@ function comment_form( $args = array(), $post_id = null ) {
 					do_action( 'comment_form_must_log_in_after' );
 					?>
 				<?php else : ?>
-					<form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="large-12 columns comment-form"<?php echo $html5 ? ' novalidate' : ''; ?>>
+					<form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="comment-form"<?php echo $html5 ? ' novalidate' : ''; ?>>
 						<?php
 						/**
 						 * Fires at the top of the comment form, inside the form tag.
