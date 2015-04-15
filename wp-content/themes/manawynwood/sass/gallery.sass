@@ -1,0 +1,37 @@
+// Custom style for MANAWYNWOOD Company
+//=====================================
+
+// Vars
+//=====================================
+
+@import 'vars'
+@import 'mixins'
+@import 'fonts'
+@import 'social'
+
+// Main styles
+//=====================================
+
+html
+	body
+		background: $mw-black
+		.header
+			background: $mw-black
+			.logo
+				text-indent: -9999px
+				background: url(../images/logo-white.svg) no-repeat center left
+			.nav-bar 
+				.main-navigation 
+					.menu-main-nav-container 
+						.nav-menu 
+							li 
+								a
+									&:hover
+										background: $mw-black
+										color: $mw-white
+								&.current-menu-item
+									a
+										color: $mw-white
+		.footer-bottom
+			padding: 20px 0
+			background: $mw-white

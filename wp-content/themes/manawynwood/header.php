@@ -36,7 +36,6 @@
 					
 					<div id="navbar" class="large-7 columns nav-bar">
 						<nav id="site-navigation" class="navigation main-navigation" role="navigation">
-							<button class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></button>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 						</nav>
 					</div>
