@@ -213,6 +213,7 @@ function twentythirteen_scripts_styles() {
 		
 		wp_enqueue_style( 'component', get_template_directory_uri() . '/css/gallery/component.css', array(), '3.03' );		
 		wp_enqueue_style( 'gallery', get_template_directory_uri() . '/css/gallery.css', array(), '3.03' );		
+		wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), '3.03' );		
 	}
 }
 add_action( 'wp_enqueue_scripts', 'twentythirteen_scripts_styles' );

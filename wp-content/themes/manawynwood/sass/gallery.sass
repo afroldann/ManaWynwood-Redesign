@@ -15,6 +15,51 @@
 html
 	body
 		background: $mw-black
+		.grid
+			margin-bottom: 50px
+			li
+				overflow: hidden
+				a
+					&:hover
+						text-decoration: none
+						&:after
+							+opacity(1)
+							+scale(1)
+						&:before
+							+opacity(1)
+							margin-top: -40px
+					&:before
+						+opacity(0)
+						+transition( all, 0.4s, ease )
+						content: '⊕'
+						font-size: 4em
+						color: $mw-white
+						position: absolute
+						left: 50%
+						z-index: 3
+						top: 50%
+						height: 40px
+						width: 40px
+						margin-left: -20px
+						margin-top: 10px
+
+
+					&:after
+						+scale(0.5)
+						+opacity(0)
+						+transition( all, 0.4s, ease )
+						content: ''
+						position: absolute
+						width: 90%
+						top: 20px
+						z-index: 2
+						background: $mw-black-alpha
+						height: 100%
+						left: 5%
+
+					&:before
+
+
 		.header
 			background: $mw-black
 			.logo

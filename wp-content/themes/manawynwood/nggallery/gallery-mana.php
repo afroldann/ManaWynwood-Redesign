@@ -43,8 +43,7 @@ Follow variables are useable :
 		jQuery(document).ready(function($){
 			jQuery(function($) {
 		    var nextgen_fancybox_init = function() {
-		    		var selector = nextgen_lightbox_filter_selector($, $(".ngg-fancybox"));
-		    		
+		    	var selector = nextgen_lightbox_filter_selector($, $(".ngg-fancybox"));		    		
 		        selector.fancybox({
 		                'width'             : '70%',
 		                'height'            : '70%',
