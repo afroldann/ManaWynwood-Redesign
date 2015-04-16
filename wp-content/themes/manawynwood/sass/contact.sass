@@ -1,0 +1,74 @@
+html
+	body
+		.post-contact
+			.contact-dates
+				padding: 20px
+				font: 1.1em $HELVLG	
+				h5
+					font: 1.3em $HELVBLCD
+				p
+					margin: 0
+					font-size: 0.9em
+					color: $mw-gray-soft
+				span
+					padding-left: 50px
+					display: block
+					margin-top: 30px
+					background: url(../images/gray-pin.svg) no-repeat left 5px
+			
+			.contact-form
+				font: 1.1em $HELVLG
+				input
+					border: 1px solid $mw-gray-ultraLight
+					box-shadow: none
+					color: $mw-gray-light
+					height: 40px
+					margin-bottom: 5px
+				textarea
+					font-size: 0.9em
+					border: 1px solid $mw-gray-ultraLight
+					color: $mw-gray-light
+					box-shadow: none
+					width: 99%
+				select
+					font-size: 0.9em
+					color: $mw-gray-light
+					background: $mw-white
+					border: 1px solid $mw-gray-ultraLight
+				.input-counter
+					color: $mw-gray-light
+					font-size: 0.7em
+				.ninja-forms-required-items
+					font: 0.8em $HELVLG
+					color: $mw-gray 
+					margin: 10px 0
+				.field-wrap
+					margin-bottom: 0
+				.first-name-wrap, 
+				.last-name-wrap, 
+				.phone-wrap, 
+				.mobile-wrap, 
+				.country-wrap, 
+				.city-wrap
+					width: 50%
+					float: left
+					padding: 5px 5px 5px 0px
+				.email-wrap
+					width: 99%
+					float: left
+				.send-wrap
+					margin: 20px 0
+					text-align: right
+					&:hover
+						.send
+							background: $mw-black
+							color: $mw-white
+					.send
+						background: $mw-white
+						color: $mw-gray
+						font: 1em $HELVLG
+						padding: 0 50px
+						+transition(all, 0.3s, ease)
+						border: none
+						border-bottom: 1px solid $mw-black
+						border-radius: 0

@@ -8,6 +8,7 @@
 @import 'mixins'
 @import 'fonts'
 @import 'social'
+@import 'contact'
 
 // Main styles
 //=====================================
@@ -43,85 +44,21 @@ html
 			a
 				color: $mw-gray-regular
 		
-		.post-contact
-			.contact-dates
-				padding: 20px
-				font: 1.1em $HELVLG	
-				h5
-					font: 1.3em $HELVBLCD
-				p
-					margin: 0
-					font-size: 0.9em
-					color: $mw-gray-soft
-				span
-					padding-left: 50px
-					display: block
-					margin-top: 30px
-			
-			.contact-form
-				font: 1.1em $HELVLG
-				input
-					border: 1px solid $mw-gray-ultraLight
-					box-shadow: none
-					color: $mw-gray-light
-					height: 40px
-					margin-bottom: 5px
-				textarea
-					font-size: 0.9em
-					border: 1px solid $mw-gray-ultraLight
-					color: $mw-gray-light
-					box-shadow: none
-					width: 99%
-				select
-					font-size: 0.9em
-					color: $mw-gray-light
-					background: $mw-white
-					border: 1px solid $mw-gray-ultraLight
-				.input-counter
-					color: $mw-gray-light
-					font-size: 0.7em
-				.ninja-forms-required-items
-					font: 0.8em $HELVLG
-					color: $mw-gray 
-					margin: 10px 0
-				.field-wrap
-					margin-bottom: 0
-				.first-name-wrap, 
-				.last-name-wrap, 
-				.phone-wrap, 
-				.mobile-wrap, 
-				.country-wrap, 
-				.city-wrap
-					width: 50%
-					float: left
-					padding: 5px 5px 5px 0px
-				.email-wrap
-					width: 99%
-					float: left
-				.send-wrap
-					margin: 20px 0
-					text-align: right
-					&:hover
-						.send
-							background: $mw-black
-							color: $mw-white
-					.send
-						background: $mw-white
-						color: $mw-gray
-						font: 1em $HELVLG
-						padding: 0 50px
-						+transition(all, 0.3s, ease)
-						border: none
-						border-bottom: 1px solid $mw-black
-						border-radius: 0
 
 		&.post-type-archive-venues
 			.venue
-				border-bottom: 1px solid $mw-gray-light
 				margin-bottom: 30px
+				.parent
+					font: 2.5em $HELVBLCD
+					color: $mw-black
+				.wynwood
+					font: 2.5em $HELVBLCD
+					color: $mw-gray-past
+
 				h2
 					font: 2.5em $HELVBLCD
 					text-transform: uppercase
+					margin-top: 0
 				h3
 					font: 1.2em $HELVLG
 					text-transform: uppercase
@@ -130,9 +67,10 @@ html
 						color: $mw-red
 				
 				.container-plan
-					margin: 40px 0
+					margin: 0
 					max-height: 350px
 					border: 5px solid $mw-gray-light
+
 				.plan-video
 					a
 						background: $mw-black
@@ -141,7 +79,7 @@ html
 						display: block
 						position: relative
 						z-index: 1
-						top: -120px
+						top: -80px
 						text-indent: -9999px
 						+border-radius(2px)
 						box-shadow: 0px 0px 15px 2px $mw-gray-light
@@ -340,6 +278,8 @@ html
 
 		.container-gallery
 			margin-top: 20px
+			padding-bottom: 30px
+			border-bottom: 1px solid $mw-gray-ultraLight
 			h2
 				font: 1.4em $HELVBLCD
 				text-transform: uppercase

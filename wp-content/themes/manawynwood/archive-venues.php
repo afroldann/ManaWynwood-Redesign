@@ -12,7 +12,8 @@
 					$the_query = new WP_Query( $query_args );
 				?>
 				<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="large-12 columns">
+					<div class="large-12 columns title">
+						<span class="parent">MANA</span><span class="wynwood">WYNWOOD</span>
 						<h2><?php the_title() ?></h2>
 					</div>
 					
@@ -32,6 +33,7 @@
 					<?php include PATHAGP . 'gallery-venues-tpl.php'; ?>
 					
 					<div class="large-12 columns">
+						<h3><?php the_title(); ?> <span>Floor Plan</span></h3>
 						<div class="large-12 columns container-plan">
 							<?php the_post_thumbnail(); ?>
 						</div>
@@ -43,13 +45,12 @@
 						</div>
 
 					</div>
-				</section>
-				<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
-				<?php endif; ?>
-		</div>
+			</section>
+			<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
 
-		<section class="large-12 columns venue rc-cola-factory">
+			<section class="large-12 columns venue rc-cola-factory">
 				<?php
 					$query_args = array(
 						'post_type' => 'venues',
@@ -59,7 +60,8 @@
 					$the_query = new WP_Query( $query_args );
 				?>
 				<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="large-12 columns">
+					<div class="large-12 columns title">
+						<span class="parent">MANA</span><span class="wynwood">WYNWOOD</span>
 						<h2><?php the_title() ?></h2>
 					</div>
 					<div class="large-6 columns content-decs">
@@ -87,10 +89,55 @@
 						</div>
 
 					</div>
-				</section>
-				<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
-				<?php endif; ?>
+			</section>
+			<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+
+			<section class="large-12 columns venue art-walk">
+				<?php
+					$query_args = array(
+						'post_type' => 'venues',
+						'posts_per_page' => 1,
+						'offset' => 2
+					);
+					$the_query = new WP_Query( $query_args );
+				?>
+				<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<div class="large-12 columns title">
+						<span class="parent">MANA</span><span class="wynwood">WYNWOOD</span>
+						<h2><?php the_title() ?></h2>
+					</div>
+					<div class="large-6 columns">
+						<iframe src="<?php the_field('video'); ?>" 
+							width="100%" 
+							height="350" 
+							frameborder="0" 
+							webkitallowfullscreen mozallowfullscreen allowfullscreen>
+						</iframe>
+					</div>
+					<div class="large-6 columns content-decs">
+						<?php the_content(); ?>
+					</div>
+					
+					<?php include PATHAGP . 'gallery-venues-tpl.php'; ?>
+					
+					<div class="large-12 columns">
+						<div class="large-12 columns container-plan">
+							<?php the_post_thumbnail(); ?>
+						</div>
+						<div class="large-3 columns plan-video right">
+							<a href="<?php the_field('video_related') ?>" class="iframe video-link">
+								video
+							</a>
+						</div>
+
+					</div>
+			</section>
+			<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+
 		</div>
 	</div>
 	<script type="text/javascript">
