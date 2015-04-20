@@ -103,11 +103,31 @@ html
 
 				.content-decs
 					padding: 25px
-					height: 325px
+					height: 350px
 					overflow: hidden
+					+transition(all, 0.3s, esase)
+					text-align: justify
+
+					&:after
+						content: ''
+						position: absolute
+						bottom: 0
+						width: 85%
+						background: url(../images/buton-open.png) no-repeat center top $mw-white
+						width: 93%
+						height: 25px
+						border-top: 1px solid $mw-gray-ultraLight
+						cursor: pointer
+					
 					p
 						font: 1em $HELVLT
 						line-height: 1.4
+					
+					&.open
+						height: auto
+						&:after
+							background: url(../images/buton-close.png) no-repeat center top $mw-white
+
 
 		.custom-pagination
 			text-align: center
