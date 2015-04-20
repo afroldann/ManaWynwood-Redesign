@@ -175,11 +175,11 @@
 							<h3><?php the_title(); ?> <span>Nights</span></h3>
 							<?php query_posts( 'post_type=sc_event&posts_per_page=2' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
 						    	<div class="item large-6 columns">
+									<a class="link" href="<?php echo get_permalink(); ?>"></a>
 							  		<div class="container-image">
 							    		<?php if ( has_post_thumbnail() ) { the_post_thumbnail('rs-tmb'); } else {echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/broke-image.jpg" />'; }?>
 							    	</div>
 									<div class="detail large-12 columns">
-										<a class="link" href="#"></a>
 					        			<span class="event-date-only" id="sc_event_details_109">
 											<?php echo get_post_meta($post->ID, 'sc_event_month', true); ?> . <?php echo get_post_meta($post->ID, 'sc_event_day_of_month', true); ?> . <?php echo get_post_meta($post->ID, 'sc_event_year', true); ?>
 										</span>
