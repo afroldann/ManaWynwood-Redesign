@@ -591,6 +591,7 @@ function add_thumbnail_sizes() {
 	add_image_size( 'detail', 1200, 660, true );
 	add_image_size( 'gallery-thumb', 166, 166, true );
 	add_image_size( 'floor-plan', 939, 670, true );
+	add_image_size( 'gallery-image-two', 584, 322, true );
 
 	if (class_exists('MultiPostThumbnails')) {
 	    $builtin_types = array('post');

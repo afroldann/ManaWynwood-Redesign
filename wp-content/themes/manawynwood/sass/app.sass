@@ -24,7 +24,6 @@ html
 				z-index: 2
 			.header
 				z-index: 1
-
 	body
 		-webkit-font-smoothing: antialiased
 		font-smoothing: antialiased
@@ -48,17 +47,78 @@ html
 		&.post-type-archive-venues
 			.venue
 				margin-bottom: 30px
+				&.un-conventional-center
+					margin-top: 40px
+				&.art-walk
+					.last-events-art-walk
+						.item
+							padding: 0 20px 0 0
+							h4
+								text-align: center
+								margin: 10px 0
+								font: 1em HELVLG
+								text-transform: uppercase
+							p
+								text-align: center
+								font-size: 0.8em
+								line-height: 1.3
+								padding: 5px 40px
+								color: $mw-gray-past
+
+							.event-date-only
+								border: solid 1px $mw-black
+								+border-radius(6px)
+								display: block
+								padding: 5px 30px
+								font: 1em HELVLG
+								color: #000
+								margin: 20px auto 10px auto
+								width: 180px
+								text-align: center
+					h2
+						&:after
+							left: 7.5%
+				&.rc-cola-factory
+					h2
+						&:after
+							left: 20.5%
+					.content-decs
+						padding-left: 0
+						height: 412px
+						&:after
+							width: 97%
+
+				.main-container-plan
+					margin-top: 60px
+					border-top: 1px solid $mw-gray-ultraLight
+					.container-plan
+						margin-top: 0
+
 				.parent
-					font: 2.5em $HELVBLCD
+					font: 2.9em $HELVBLCD
 					color: $mw-black
 				.wynwood
-					font: 2.5em $HELVBLCD
+					font: 2.9em $HELVBLCD
 					color: $mw-gray-past
 
 				h2
-					font: 2.5em $HELVBLCD
+					font: 2.9em $HELVBLCD
 					text-transform: uppercase
 					margin-top: 0
+					line-height: 32px
+					margin-bottom: 60px
+					&:after
+						content: ''
+						position: absolute
+						left: 27.5%
+						width: 100px
+						height: 1px
+						background: $mw-gray-light
+						bottom: 35px
+					span
+						color: $mw-gray-light
+						&.red
+							color: $mw-red
 				h3
 					font: 1.2em $HELVLG
 					text-transform: uppercase
@@ -70,6 +130,23 @@ html
 					margin: 0
 					max-height: 350px
 					border: 5px solid $mw-gray-light
+					&:hover
+						&:after
+							bottom: 10px
+					&:after
+						content: 'x'
+						position: absolute
+						width: 50px
+						height: 50px
+						background: $mw-black
+						z-index: 2
+						cursor: pointer
+						bottom: -25px
+						left: 50%
+						margin-left: -25px
+						+rotate(45deg)
+						+transition(all, 0.3s, ease)
+						border: 3px solid $mw-gray-light
 
 				.plan-video
 					a
@@ -103,11 +180,31 @@ html
 
 				.content-decs
 					padding: 25px
-					height: 325px
+					height: 350px
 					overflow: hidden
+					+transition(all, 0.3s, esase)
+					text-align: justify
+
+					&:after
+						content: ''
+						position: absolute
+						bottom: 0
+						width: 85%
+						background: url(../images/buton-open.png) no-repeat center top $mw-white
+						width: 93%
+						height: 25px
+						border-top: 1px solid $mw-gray-ultraLight
+						cursor: pointer
+					
 					p
 						font: 1em $HELVLT
 						line-height: 1.4
+					
+					&.open
+						height: auto
+						&:after
+							background: url(../images/buton-close.png) no-repeat center top $mw-white
+
 
 		.custom-pagination
 			text-align: center

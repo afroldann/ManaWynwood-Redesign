@@ -13,7 +13,7 @@
 			        		<p><?php echo word_count(get_the_excerpt(), '15') . '...'; ?></p>
 						</div>
 			    	</div>
-				<?php endwhile; endif; wp_reset_query(); ?> 
+				<?php endwhile; endif; wp_reset_query(); ?>
 				</div>
 		    </section>
 			
@@ -40,26 +40,31 @@
 			<section class="section slider-venues large-12 columns">
 				<div class="title"><h4>VENUES</h4></div>
 				<div class="owl-carousel slider-venues large-12 columns" id="carousel-venues">
-				<?php query_posts( 'post_type=venue' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
+				<?php query_posts( 'post_type=venues' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
 			    	<div class="item">
 						<div class="detail large-4 columns">
 							<a class="link" href="#"></a>
 							<h2><?php the_title(); ?></h2>
-			        		<p><?php the_content(); ?></p>
-						</div>
+							<?php the_field('location_field'); ?>
+			     		</div>
 				  		<div class="large-8 columns container-image">
-				    		<?php if ( has_post_thumbnail() ) { the_post_thumbnail('rs-tmb-venues'); } else {echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/broke-image.jpg" />'; }?>
+							<iframe src="<?php the_field('video'); ?>" 
+								width="100%" 
+								height="400" 
+								frameborder="0" 
+								webkitallowfullscreen mozallowfullscreen allowfullscreen>
+							</iframe>
 				    	</div>
 			    	</div>
 				<?php endwhile; endif; wp_reset_query(); ?> 
 				</div>
-				<a class="link-to-all" href="<?php echo home_url( '/' ).'venue' ?>">All Venues</a>
+				<a class="link-to-all" href="<?php echo home_url( '/' ).'venues' ?>">All Venues</a>
 			</section>
 
 			<section class="section press-home large-12 columns">
 				<div class="title"><h4>Press</h4></div>
 				<div class="press-list large-12 columns" id="press-items">
-				<?php query_posts( 'post_type=post&posts_per_page=4' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
+				<?php query_posts( 'post_type=press&posts_per_page=4' ); if (have_posts() ) : while(have_posts()) : the_post(); ?>
 			    	<div class="item large-3 columns">
 			    		<div class="container-item">
 					  		<div class="large-12 columns container-image">

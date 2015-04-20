@@ -50,7 +50,6 @@
 	            </div>
 	        </div>
 		</div>
-
 		<?php include PATHAGP . 'custom-comments.php'; ?>
 		<?php include PATHAGP . 'press-tpl.php'; ?>
 	</div>

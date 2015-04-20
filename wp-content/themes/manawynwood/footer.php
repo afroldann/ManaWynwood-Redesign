@@ -22,5 +22,10 @@
 		<div id='map' style="position: absolute; height: 0; left: 0; top: 0; width: 100%; z-index: 9;"></div>
 	</div>
 	<?php wp_footer(); ?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$('html').niceScroll();
+		});
+	</script>
 </body>
 </html>

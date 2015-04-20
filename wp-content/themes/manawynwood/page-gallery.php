@@ -142,6 +142,26 @@
 			maxDuration : 0.7,
 			viewportFactor : 0.2
 		});
+		function modalBox(){
+			$('.fancybox').attr('rel', 'media-gallery').fancybox({
+				openEffect 	: 'elastic',
+				closeEffect : 'fade',
+				
+				padding		: 0,
+				prevEffect 	: 'none',
+				nextEffect 	: 'none',
+				margin 		: 0,
+				overlayColor: 'rgba(0,0,0,0.95)',
+				centerOnScroll: true,
+				autoScale: true,
+				arrows : true,
+				helpers : {
+					media : {},
+					buttons : {}
+				}
+			});
+		}
+		modalBox();
 	});
 	</script>
 <?php get_footer(); ?>
