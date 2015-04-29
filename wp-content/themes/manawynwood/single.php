@@ -20,6 +20,7 @@
 						<?php echo get_post_meta($post->ID, 'sc_event_year', true); ?>
 					</span>
 					<?php manaShare(null); ?>
+					<?php if( function_exists('dot_irecommendthis') ) dot_irecommendthis(); ?>
 				</div>
 			<?php endwhile; ?>
 		</div>
