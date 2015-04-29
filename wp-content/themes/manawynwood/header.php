@@ -39,7 +39,10 @@
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 						</nav>
 					</div>
-					<div class="social-menu large-12 columns"><?php wp_nav_menu( array('menu' => 'social-menu' )); ?></div>
+					<div class="social-menu large-12 columns">
+						<?php wp_nav_menu( array('menu' => 'social-menu' )); ?>
+						<?php if( function_exists('dot_irecommendthis') ) dot_irecommendthis(); ?>
+					</div>
 				</div>
 			</div>
 		</header>
