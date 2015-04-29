@@ -671,6 +671,7 @@ function manaShare($url = null, $image = null) {
 	        <span class="dataNumber">0</span>
         </span><!--//-->
 
+        <?php if( function_exists('dot_irecommendthis') ) dot_irecommendthis(); ?>
 	</div>
 	<?php 
 }

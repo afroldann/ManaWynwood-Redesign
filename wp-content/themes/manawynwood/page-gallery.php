@@ -136,7 +136,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-	jQuery(document).ready(function(){
+	jQuery(document).ready(function($){
 		new AnimOnScroll( document.getElementById( 'grid' ), {
 			minDuration : 0.4,
 			maxDuration : 0.7,
