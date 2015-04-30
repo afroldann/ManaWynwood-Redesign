@@ -470,13 +470,13 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 
 					if( ($recommended == 0) &&  $options['hide_zero'] == 1 ) {
 
-						$output = '<span class="dot-irecommendthis-count">&nbsp;</span> <span class="dot-irecommendthis-suffix">'. $suffix .'</span>';
+						$output = '<span class="dot-irecommendthis-count dataNumber">&nbsp;</span> <span class="dot-irecommendthis-suffix">'. $suffix .'</span>';
 
 						return $output;
 
 					} else {
 
-						$output = '<span class="dot-irecommendthis-count">'. $recommended .'</span> <span class="dot-irecommendthis-suffix">'. $suffix .'</span>';
+						$output = '<span class="dot-irecommendthis-count dataNumber">'. $recommended .'</span> <span class="dot-irecommendthis-suffix">'. $suffix .'</span>';
 
 						return $output;
 
@@ -532,7 +532,7 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 					elseif( $recommended == 1 ) { $suffix = $text_one_suffix; }
 					else { $suffix = $text_more_suffix; }
 
-					$output = '<span class="dot-irecommendthis-count">'. $recommended .'</span> <span class="dot-irecommendthis-suffix">'. $suffix .'</span>';
+					$output = '<span class="dot-irecommendthis-count dataNumber">'. $recommended .'</span> <span class="dot-irecommendthis-suffix">'. $suffix .'</span>';
 
 					$dot_irt_html = apply_filters( 'dot_irt_before_count', $output );
 
@@ -591,7 +591,7 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 			if( $options['disable_unique_ip'] != '0' ) {
 
 				if (!isset($_COOKIE['dot_irecommendthis_'.$post_ID])) {
-					$class = 'dot-irecommendthis';
+					$class = 'dot-irecommendthis buttonsPost';
 
 
 					if( $options['link_title_new'] == '' ) {
@@ -607,7 +607,7 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 				}
 				else {
 
-					$class = 'dot-irecommendthis active';
+					$class = 'dot-irecommendthis buttonsPost active';
 
 					if( $options['link_title_active'] == '' ) {
 
@@ -640,7 +640,7 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 				}
 				else {
 
-					$class = 'dot-irecommendthis active';
+					$class = 'dot-irecommendthis buttonsPost active';
 
 					if( $options['link_title_active'] == '' ) {
 
@@ -655,10 +655,10 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 
 			}
 
-			$dot_irt_html = '<a href="#" class="'. $class .'" id="dot-irecommendthis-'. $post_ID .'" title="'. $title .'">';
+			$dot_irt_html = '<span class="'. $class .'" id="dot-irecommendthis-'. $post_ID .'" title="'. $title .'">';
 
 			$dot_irt_html .= apply_filters( 'dot_irt_before_count', $output );
-			$dot_irt_html .= '</a>';
+			$dot_irt_html .= '</span>';
 
 			return $dot_irt_html;
 
