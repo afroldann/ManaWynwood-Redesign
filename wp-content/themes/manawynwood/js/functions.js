@@ -212,6 +212,11 @@ jQuery(document).ready(function($){
 		mouseDrag: false
 	});
 	
+	function appendHeart(){
+		$('.social-menu .dot-irecommendthis').prependTo('#menu-social-menu');
+	}
+	appendHeart();
+
 	function openMap(){
 		$('a[title="map"]').on('click', function(){
 			$(this).toggleClass('clicked');

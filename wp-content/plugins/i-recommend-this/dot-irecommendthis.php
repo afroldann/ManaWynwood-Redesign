@@ -655,7 +655,7 @@ if ( ! class_exists( 'DOT_IRecommendThis' ) )
 
 			}
 
-			$dot_irt_html = '<span class="'. $class .'" id="dot-irecommendthis-'. $post_ID .'" title="'. $title .'">';
+			$dot_irt_html = '<span class="'. $class .' buttonsPost " id="dot-irecommendthis-'. $post_ID .'" title="'. $title .'">';
 
 			$dot_irt_html .= apply_filters( 'dot_irt_before_count', $output );
 			$dot_irt_html .= '</span>';

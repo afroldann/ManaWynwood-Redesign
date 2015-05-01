@@ -429,6 +429,8 @@ html
 			margin-bottom: 20px
 			background: $mw-white
 			z-index: 9
+			.dot-irecommendthis-count
+				display: none
 			.row
 				&.onScrolled
 					max-width: 75em
@@ -438,6 +440,8 @@ html
 				margin: 0
 				+opacity(0.97)
 				.social-menu 
+					.dot-irecommendthis
+						padding: 25px 0
 					ul
 						padding: 0
 						li
@@ -1227,20 +1231,29 @@ html
 		.sharePost
 			text-align: center
 			margin-top: 20px
+			.dot-irecommendthis
+				+gray-filter(100%)
+				+transition(all, 0.2s, ease)
+				height: 50px
+				position: relative
+				background: url(../images/heart.svg) no-repeat center -10px
+				cursor: pointer
+				&:hover
+					+gray-filter(0)
+
+				.dot-irecommendthis-count
+					position: absolute
+					bottom: 0
+					width: 100%
+					left: 0
 			.buttonsPost
 				width: 50px
 				display: inline-block
 				.fakeButton
-					-webkit-filter: grayscale(100%)
-					-moz-filter: grayscale(100%)
-					-o-filter: grayscale(100%)
-					filter: grayscale(100%)
+					+gray-filter(100%)
 					+transition(all, 0.2s, ease)
 					&:hover
-						-webkit-filter: grayscale(0)
-						-moz-filter: grayscale(0)
-						-o-filter: grayscale(0)
-						filter: grayscale(0)
+						+gray-filter(0)
 					a
 						text-indent: -9999px
 						float: left
