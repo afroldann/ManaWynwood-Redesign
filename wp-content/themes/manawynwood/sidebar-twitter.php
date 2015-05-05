@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
 					autoplayTimeout: 5000,
 					autoplayHoverPause: true
 				});	
-			},1000);
+			},2000);
 		}
 		loadSlider();
 	}

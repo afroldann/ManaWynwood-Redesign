@@ -3,6 +3,35 @@ jQuery(document).ready(function($){
 	    _window = $( window );
 	var _header = $('.header');
 
+	var timer;	//timer for splash screen
+	//calling jPreLoader
+	$('body').jpreLoader({
+		splashID: "#jSplash",
+		loaderVPos: '0%',
+		autoClose: true,
+		showPercentage: false,
+		//onetimeLoad: true,
+		splashFunction: function() {  
+			$('#jSplash').children('section').not('.selected').fadeOut();
+			$('#jSplash').hide().fadeIn(800);
+		}
+	}, function() {
+		clearInterval(timer);
+		$('.footer').animate({
+			"bottom": 0,
+			"opacity": 1
+		}, 500);
+		$('.header').animate({
+			"top": 0,
+			"opacity": 1
+		}, 800, function() {
+		$('#main').animate({
+			'opacity': 1,
+			'top': 0
+		});
+		});
+	});
+
 	whereami = location.pathname.substr(0,location.pathname.length - 1).substr(1).split('/');
 	if(whereami.length >= 2 || (whereami.length === 1 && (whereami[0] == 'fotoshow' || whereami[0] == 'sociales'))){
 		socialShares();

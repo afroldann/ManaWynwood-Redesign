@@ -177,6 +177,7 @@ function twentythirteen_scripts_styles() {
 	wp_enqueue_script( 'instagram-feed', get_template_directory_uri() . '/js/instafeed.min.js', array( 'jquery' ), '2014-06-08', true );
 	wp_enqueue_script( 'twitter-feed', get_template_directory_uri() . '/js/twitter-feed.min.js', array( 'jquery' ), '2014-06-08', true );
 	wp_enqueue_script( 'zoomImage', get_template_directory_uri() . '/js/jquery.zoom.min.js', array( 'jquery' ), '2014-06-08', true );
+	wp_enqueue_script( 'preloader', get_template_directory_uri() . '/js/jpreloader.min.js', array( 'jquery' ), '2014-06-08', true );
 	wp_enqueue_script( 'twentythirteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-06-08', true );
 
 	// Loads app styles
@@ -184,6 +185,7 @@ function twentythirteen_scripts_styles() {
 	wp_enqueue_style( 'owl', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.00' );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.00' );
 	wp_enqueue_style( 'instagram', get_template_directory_uri() . '/css/instagram.css', array(), '1.00' );
+	wp_enqueue_style( 'preload', get_template_directory_uri() . '/css/jpreloader.css', array(), '1.00' );
 		
 
 	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.

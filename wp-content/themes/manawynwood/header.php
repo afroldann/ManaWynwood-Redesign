@@ -29,7 +29,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="row hfeed">
-		<header id="masthead" class="header large-12 columns" role="banner">
+		<header id="masthead" class="header large-12 columns" role="banner" style="top: 30px; opacity: 0">
 			<div class="row onScrolled">
 				<div class="large-12 columns">
 					<a class="logo home-link large-5 columns" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -46,5 +46,17 @@
 				</div>
 			</div>
 		</header>
-
-		<div id="main" class="large-12 columns site-main">
+		<section id="jSplash">
+			<section class="selected animated fadeIn">
+				<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="123px" height="123px" viewBox="0 0 123 123" enable-background="new 0 0 123 123" xml:space="preserve">
+					<rect width="123" height="123"/>
+					<polygon fill="#FFFFFF" points="24,17 24,100 24,106 30,106 30,31 55.752,105 82,30.259 82,106 88,106 88,17 81,17 56.5,88.668 
+							31.515,17 		"/>
+					<polygon fill="#FFFFFF" points="35,17 35,100 35,106 41,106 41,31 66.752,105 93,30.259 93,106 99,106 99,17 92,17 67.5,88.668 
+							42.515,17 		"/>
+				</svg>
+			</section>
+		</section>
+		<div id="main" style="opacity: 0; top: 30px" class="large-12 columns site-main">
